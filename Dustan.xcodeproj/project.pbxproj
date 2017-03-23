@@ -7,21 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20E1A0FECB2A410AEAAA0BFD /* Pods_Dustan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE27FD6A14BD2FF9D7B272C /* Pods_Dustan.framework */; };
 		4B58D3911E8374A6000D155B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3901E8374A6000D155B /* AppDelegate.swift */; };
-		4B58D3931E8374A6000D155B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3921E8374A6000D155B /* ViewController.swift */; };
-		4B58D3961E8374A6000D155B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B58D3941E8374A6000D155B /* Main.storyboard */; };
-		4B58D3981E8374A6000D155B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B58D3971E8374A6000D155B /* Assets.xcassets */; };
-		4B58D39B1E8374A6000D155B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B58D3991E8374A6000D155B /* LaunchScreen.storyboard */; };
+		4B58D3A31E83784D000D155B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B58D3A21E83784D000D155B /* Main.storyboard */; };
+		4B58D3A51E837895000D155B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B58D3A41E837895000D155B /* Assets.xcassets */; };
+		4B58D3A71E8378BE000D155B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B58D3A61E8378BE000D155B /* LaunchScreen.storyboard */; };
+		4B58D3AB1E8378FB000D155B /* DoorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3A81E8378FB000D155B /* DoorTableViewCell.swift */; };
+		4B58D3AC1E8378FB000D155B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3A91E8378FB000D155B /* UserTableViewCell.swift */; };
+		4B58D3AD1E8378FB000D155B /* DeleteDoorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3AA1E8378FB000D155B /* DeleteDoorTableViewCell.swift */; };
+		4B58D3CA1E837936000D155B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3AF1E837936000D155B /* LoginViewController.swift */; };
+		4B58D3CB1E837936000D155B /* FirstSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B01E837936000D155B /* FirstSetupViewController.swift */; };
+		4B58D3CC1E837936000D155B /* AddNewDoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B11E837936000D155B /* AddNewDoorViewController.swift */; };
+		4B58D3CD1E837936000D155B /* AdminstratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B21E837936000D155B /* AdminstratorViewController.swift */; };
+		4B58D3CE1E837936000D155B /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B31E837936000D155B /* PanelViewController.swift */; };
+		4B58D3CF1E837936000D155B /* UnLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B41E837936000D155B /* UnLockViewController.swift */; };
+		4B58D3D01E837936000D155B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B51E837936000D155B /* HomeViewController.swift */; };
+		4B58D3D11E837936000D155B /* DoorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B61E837936000D155B /* DoorListViewController.swift */; };
+		4B58D3D21E837936000D155B /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B71E837936000D155B /* ManageViewController.swift */; };
+		4B58D3D31E837936000D155B /* BlockGSMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B81E837936000D155B /* BlockGSMViewController.swift */; };
+		4B58D3D41E837936000D155B /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B91E837936000D155B /* UserListViewController.swift */; };
+		4B58D3D51E837936000D155B /* AddNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3BA1E837936000D155B /* AddNewUserViewController.swift */; };
+		4B58D3D61E837936000D155B /* DeleteUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3BB1E837936000D155B /* DeleteUserViewController.swift */; };
+		4B58D3D71E837936000D155B /* ManageDoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3BC1E837936000D155B /* ManageDoorViewController.swift */; };
+		4B58D3D81E837936000D155B /* DeleteDoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3BD1E837936000D155B /* DeleteDoorViewController.swift */; };
+		4B58D3D91E837936000D155B /* DoorStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3BE1E837936000D155B /* DoorStatusViewController.swift */; };
+		4B58D3DA1E837936000D155B /* ShowDoorStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3BF1E837936000D155B /* ShowDoorStatusViewController.swift */; };
+		4B58D3DB1E837936000D155B /* AlertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C01E837936000D155B /* AlertListViewController.swift */; };
+		4B58D3DC1E837936000D155B /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C11E837936000D155B /* SupportViewController.swift */; };
+		4B58D3DD1E837936000D155B /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C21E837936000D155B /* FAQViewController.swift */; };
+		4B58D3DE1E837936000D155B /* UpdateEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C31E837936000D155B /* UpdateEmailViewController.swift */; };
+		4B58D3DF1E837936000D155B /* UpdatePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C41E837936000D155B /* UpdatePasswordViewController.swift */; };
+		4B58D3E01E837936000D155B /* ResetFactoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C51E837936000D155B /* ResetFactoryViewController.swift */; };
+		4B58D3E11E837936000D155B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C61E837936000D155B /* SettingsViewController.swift */; };
+		4B58D3E21E837936000D155B /* SecurityQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C71E837936000D155B /* SecurityQuestionViewController.swift */; };
+		4B58D3E31E837936000D155B /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C81E837936000D155B /* SelectUserViewController.swift */; };
+		4B58D3E41E837936000D155B /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C91E837936000D155B /* PasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B58D38D1E8374A6000D155B /* Dustan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dustan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B58D3901E8374A6000D155B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B58D3921E8374A6000D155B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4B58D3951E8374A6000D155B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4B58D3971E8374A6000D155B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B58D39A1E8374A6000D155B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B58D39C1E8374A6000D155B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B58D3A21E83784D000D155B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4B58D3A41E837895000D155B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B58D3A61E8378BE000D155B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B58D3A81E8378FB000D155B /* DoorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorTableViewCell.swift; sourceTree = "<group>"; };
+		4B58D3A91E8378FB000D155B /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		4B58D3AA1E8378FB000D155B /* DeleteDoorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteDoorTableViewCell.swift; sourceTree = "<group>"; };
+		4B58D3AF1E837936000D155B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4B58D3B01E837936000D155B /* FirstSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstSetupViewController.swift; sourceTree = "<group>"; };
+		4B58D3B11E837936000D155B /* AddNewDoorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewDoorViewController.swift; sourceTree = "<group>"; };
+		4B58D3B21E837936000D155B /* AdminstratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminstratorViewController.swift; sourceTree = "<group>"; };
+		4B58D3B31E837936000D155B /* PanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
+		4B58D3B41E837936000D155B /* UnLockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnLockViewController.swift; sourceTree = "<group>"; };
+		4B58D3B51E837936000D155B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4B58D3B61E837936000D155B /* DoorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorListViewController.swift; sourceTree = "<group>"; };
+		4B58D3B71E837936000D155B /* ManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
+		4B58D3B81E837936000D155B /* BlockGSMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockGSMViewController.swift; sourceTree = "<group>"; };
+		4B58D3B91E837936000D155B /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		4B58D3BA1E837936000D155B /* AddNewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewUserViewController.swift; sourceTree = "<group>"; };
+		4B58D3BB1E837936000D155B /* DeleteUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteUserViewController.swift; sourceTree = "<group>"; };
+		4B58D3BC1E837936000D155B /* ManageDoorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDoorViewController.swift; sourceTree = "<group>"; };
+		4B58D3BD1E837936000D155B /* DeleteDoorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteDoorViewController.swift; sourceTree = "<group>"; };
+		4B58D3BE1E837936000D155B /* DoorStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorStatusViewController.swift; sourceTree = "<group>"; };
+		4B58D3BF1E837936000D155B /* ShowDoorStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDoorStatusViewController.swift; sourceTree = "<group>"; };
+		4B58D3C01E837936000D155B /* AlertListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertListViewController.swift; sourceTree = "<group>"; };
+		4B58D3C11E837936000D155B /* SupportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
+		4B58D3C21E837936000D155B /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		4B58D3C31E837936000D155B /* UpdateEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateEmailViewController.swift; sourceTree = "<group>"; };
+		4B58D3C41E837936000D155B /* UpdatePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatePasswordViewController.swift; sourceTree = "<group>"; };
+		4B58D3C51E837936000D155B /* ResetFactoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetFactoryViewController.swift; sourceTree = "<group>"; };
+		4B58D3C61E837936000D155B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4B58D3C71E837936000D155B /* SecurityQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityQuestionViewController.swift; sourceTree = "<group>"; };
+		4B58D3C81E837936000D155B /* SelectUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
+		4B58D3C91E837936000D155B /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		5646B9779675784F3D0771BF /* Pods-Dustan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dustan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dustan/Pods-Dustan.debug.xcconfig"; sourceTree = "<group>"; };
+		71885D02C97E0DDE21E49874 /* Pods-Dustan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dustan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dustan/Pods-Dustan.release.xcconfig"; sourceTree = "<group>"; };
+		7AE27FD6A14BD2FF9D7B272C /* Pods_Dustan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dustan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E1A0FECB2A410AEAAA0BFD /* Pods_Dustan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +103,8 @@
 			children = (
 				4B58D38F1E8374A6000D155B /* Dustan */,
 				4B58D38E1E8374A6000D155B /* Products */,
+				B6E9C1D0FE83E9A2CCCB9388 /* Pods */,
+				FA6FC71E9FE7E3005842EEF0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +119,76 @@
 		4B58D38F1E8374A6000D155B /* Dustan */ = {
 			isa = PBXGroup;
 			children = (
+				4B58D3E51E83793C000D155B /* ViewControllers */,
+				4B58D3AE1E837910000D155B /* Custom Table Cells */,
 				4B58D3901E8374A6000D155B /* AppDelegate.swift */,
-				4B58D3921E8374A6000D155B /* ViewController.swift */,
-				4B58D3941E8374A6000D155B /* Main.storyboard */,
-				4B58D3971E8374A6000D155B /* Assets.xcassets */,
-				4B58D3991E8374A6000D155B /* LaunchScreen.storyboard */,
+				4B58D3A21E83784D000D155B /* Main.storyboard */,
+				4B58D3A61E8378BE000D155B /* LaunchScreen.storyboard */,
+				4B58D3A41E837895000D155B /* Assets.xcassets */,
 				4B58D39C1E8374A6000D155B /* Info.plist */,
 			);
 			path = Dustan;
+			sourceTree = "<group>";
+		};
+		4B58D3AE1E837910000D155B /* Custom Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4B58D3A81E8378FB000D155B /* DoorTableViewCell.swift */,
+				4B58D3A91E8378FB000D155B /* UserTableViewCell.swift */,
+				4B58D3AA1E8378FB000D155B /* DeleteDoorTableViewCell.swift */,
+			);
+			name = "Custom Table Cells";
+			sourceTree = "<group>";
+		};
+		4B58D3E51E83793C000D155B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B58D3AF1E837936000D155B /* LoginViewController.swift */,
+				4B58D3B01E837936000D155B /* FirstSetupViewController.swift */,
+				4B58D3B11E837936000D155B /* AddNewDoorViewController.swift */,
+				4B58D3B21E837936000D155B /* AdminstratorViewController.swift */,
+				4B58D3B31E837936000D155B /* PanelViewController.swift */,
+				4B58D3B41E837936000D155B /* UnLockViewController.swift */,
+				4B58D3B51E837936000D155B /* HomeViewController.swift */,
+				4B58D3B61E837936000D155B /* DoorListViewController.swift */,
+				4B58D3B71E837936000D155B /* ManageViewController.swift */,
+				4B58D3B81E837936000D155B /* BlockGSMViewController.swift */,
+				4B58D3B91E837936000D155B /* UserListViewController.swift */,
+				4B58D3BA1E837936000D155B /* AddNewUserViewController.swift */,
+				4B58D3BB1E837936000D155B /* DeleteUserViewController.swift */,
+				4B58D3BC1E837936000D155B /* ManageDoorViewController.swift */,
+				4B58D3BD1E837936000D155B /* DeleteDoorViewController.swift */,
+				4B58D3BE1E837936000D155B /* DoorStatusViewController.swift */,
+				4B58D3BF1E837936000D155B /* ShowDoorStatusViewController.swift */,
+				4B58D3C01E837936000D155B /* AlertListViewController.swift */,
+				4B58D3C11E837936000D155B /* SupportViewController.swift */,
+				4B58D3C21E837936000D155B /* FAQViewController.swift */,
+				4B58D3C31E837936000D155B /* UpdateEmailViewController.swift */,
+				4B58D3C41E837936000D155B /* UpdatePasswordViewController.swift */,
+				4B58D3C51E837936000D155B /* ResetFactoryViewController.swift */,
+				4B58D3C61E837936000D155B /* SettingsViewController.swift */,
+				4B58D3C71E837936000D155B /* SecurityQuestionViewController.swift */,
+				4B58D3C81E837936000D155B /* SelectUserViewController.swift */,
+				4B58D3C91E837936000D155B /* PasswordViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B6E9C1D0FE83E9A2CCCB9388 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5646B9779675784F3D0771BF /* Pods-Dustan.debug.xcconfig */,
+				71885D02C97E0DDE21E49874 /* Pods-Dustan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA6FC71E9FE7E3005842EEF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AE27FD6A14BD2FF9D7B272C /* Pods_Dustan.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +198,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B58D39F1E8374A6000D155B /* Build configuration list for PBXNativeTarget "Dustan" */;
 			buildPhases = (
+				3F3FCC6DE40CD8759D7CBE8E /* [CP] Check Pods Manifest.lock */,
 				4B58D3891E8374A6000D155B /* Sources */,
 				4B58D38A1E8374A6000D155B /* Frameworks */,
 				4B58D38B1E8374A6000D155B /* Resources */,
+				58D4C7D1D0B47D2096220382 /* [CP] Embed Pods Frameworks */,
+				3F83D9679EEF5ABE43864DC3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +226,8 @@
 				TargetAttributes = {
 					4B58D38C1E8374A6000D155B = {
 						CreatedOnToolsVersion = 8.2;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = YLXVCP6CQB;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -123,44 +254,102 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B58D39B1E8374A6000D155B /* LaunchScreen.storyboard in Resources */,
-				4B58D3981E8374A6000D155B /* Assets.xcassets in Resources */,
-				4B58D3961E8374A6000D155B /* Main.storyboard in Resources */,
+				4B58D3A71E8378BE000D155B /* LaunchScreen.storyboard in Resources */,
+				4B58D3A31E83784D000D155B /* Main.storyboard in Resources */,
+				4B58D3A51E837895000D155B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F3FCC6DE40CD8759D7CBE8E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3F83D9679EEF5ABE43864DC3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dustan/Pods-Dustan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58D4C7D1D0B47D2096220382 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dustan/Pods-Dustan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4B58D3891E8374A6000D155B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B58D3931E8374A6000D155B /* ViewController.swift in Sources */,
 				4B58D3911E8374A6000D155B /* AppDelegate.swift in Sources */,
+				4B58D3CB1E837936000D155B /* FirstSetupViewController.swift in Sources */,
+				4B58D3DC1E837936000D155B /* SupportViewController.swift in Sources */,
+				4B58D3CF1E837936000D155B /* UnLockViewController.swift in Sources */,
+				4B58D3CE1E837936000D155B /* PanelViewController.swift in Sources */,
+				4B58D3D91E837936000D155B /* DoorStatusViewController.swift in Sources */,
+				4B58D3DE1E837936000D155B /* UpdateEmailViewController.swift in Sources */,
+				4B58D3CC1E837936000D155B /* AddNewDoorViewController.swift in Sources */,
+				4B58D3D41E837936000D155B /* UserListViewController.swift in Sources */,
+				4B58D3AC1E8378FB000D155B /* UserTableViewCell.swift in Sources */,
+				4B58D3DD1E837936000D155B /* FAQViewController.swift in Sources */,
+				4B58D3D11E837936000D155B /* DoorListViewController.swift in Sources */,
+				4B58D3CD1E837936000D155B /* AdminstratorViewController.swift in Sources */,
+				4B58D3D81E837936000D155B /* DeleteDoorViewController.swift in Sources */,
+				4B58D3DA1E837936000D155B /* ShowDoorStatusViewController.swift in Sources */,
+				4B58D3D71E837936000D155B /* ManageDoorViewController.swift in Sources */,
+				4B58D3DF1E837936000D155B /* UpdatePasswordViewController.swift in Sources */,
+				4B58D3D31E837936000D155B /* BlockGSMViewController.swift in Sources */,
+				4B58D3E41E837936000D155B /* PasswordViewController.swift in Sources */,
+				4B58D3D51E837936000D155B /* AddNewUserViewController.swift in Sources */,
+				4B58D3D01E837936000D155B /* HomeViewController.swift in Sources */,
+				4B58D3AD1E8378FB000D155B /* DeleteDoorTableViewCell.swift in Sources */,
+				4B58D3D61E837936000D155B /* DeleteUserViewController.swift in Sources */,
+				4B58D3E21E837936000D155B /* SecurityQuestionViewController.swift in Sources */,
+				4B58D3D21E837936000D155B /* ManageViewController.swift in Sources */,
+				4B58D3E11E837936000D155B /* SettingsViewController.swift in Sources */,
+				4B58D3DB1E837936000D155B /* AlertListViewController.swift in Sources */,
+				4B58D3E01E837936000D155B /* ResetFactoryViewController.swift in Sources */,
+				4B58D3E31E837936000D155B /* SelectUserViewController.swift in Sources */,
+				4B58D3CA1E837936000D155B /* LoginViewController.swift in Sources */,
+				4B58D3AB1E8378FB000D155B /* DoorTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4B58D3941E8374A6000D155B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B58D3951E8374A6000D155B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4B58D3991E8374A6000D155B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B58D39A1E8374A6000D155B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4B58D39D1E8374A6000D155B /* Debug */ = {
@@ -256,24 +445,32 @@
 		};
 		4B58D3A01E8374A6000D155B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5646B9779675784F3D0771BF /* Pods-Dustan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YLXVCP6CQB;
 				INFOPLIST_FILE = Dustan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobidev.Dustan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9e82df04-8461-4c2e-851b-d406a3303e2c";
+				PROVISIONING_PROFILE_SPECIFIER = All_Pro_0603;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		4B58D3A11E8374A6000D155B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71885D02C97E0DDE21E49874 /* Pods-Dustan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YLXVCP6CQB;
 				INFOPLIST_FILE = Dustan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobidev.Dustan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9e82df04-8461-4c2e-851b-d406a3303e2c";
+				PROVISIONING_PROFILE_SPECIFIER = All_Pro_0603;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -297,6 +494,7 @@
 				4B58D3A11E8374A6000D155B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

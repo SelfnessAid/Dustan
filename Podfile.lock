@@ -1,0 +1,15 @@
+PODS:
+  - DropDown (2)
+  - IQKeyboardManagerSwift (4.0.8)
+
+DEPENDENCIES:
+  - DropDown
+  - IQKeyboardManagerSwift
+
+SPEC CHECKSUMS:
+  DropDown: 744784d9c9aa505100e942c16acd05430cbb2f0a
+  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
+
+PODFILE CHECKSUM: a5575c6d4ad1668b793df1f04bdb2aaf63746465
+
+COCOAPODS: 1.2.0
