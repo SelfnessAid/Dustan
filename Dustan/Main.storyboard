@@ -764,7 +764,6 @@ Name</string>
                         <outlet property="emailTextField" destination="fre-w8-Aeu" id="ZE6-Ka-HDk"/>
                         <outlet property="lockBtn" destination="K0s-Zk-dm6" id="n7J-Co-CiW"/>
                         <outlet property="logoBtn" destination="b6O-Zx-LTL" id="PYc-GD-gwt"/>
-                        <segue destination="h9E-CE-TNc" kind="show" identifier="administratorVCSegue" id="G0x-ME-JkJ"/>
                         <segue destination="Ena-BD-NgT" kind="show" identifier="securityQestionsSegue" id="MIv-uN-huJ"/>
                     </connections>
                 </viewController>
