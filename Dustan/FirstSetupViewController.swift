@@ -30,7 +30,7 @@ class FirstSetupViewController: UIViewController {
     }
     
     @IBAction func firstSetupBtn_Click(_ sender: Any) {
-        performSegue(withIdentifier: "securitySegue", sender: nil)
+        performSegue(withIdentifier: "addNewDoorSegue", sender: nil)
     }
     
     @IBAction func doorNameBtnClick(_ sender: Any) {

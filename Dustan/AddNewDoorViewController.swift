@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AddNewDoorViewController: UIViewController {
     @IBOutlet weak var lockBtn: UIButton!
@@ -24,6 +25,12 @@ class AddNewDoorViewController: UIViewController {
         super.viewDidLoad()
         
         initialize()
+        
+        self.doorNameText.text = "New Door"
+        self.doorPhoneNoTextField.text = "+442071234567"
+        self.doorCodeTextField.text = "12341234"
+        self.appPasswordTextField.text = "password"
+        self.emailTextField.text = "man@test.com"
     }
     
     func initialize() {
@@ -68,6 +75,10 @@ class AddNewDoorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backBtn_Click(_ sender: Any) {
+        self.navigationController!.popViewController(animated: true)
+    }
+    
     @IBAction func lockBtn_Click(_ sender: Any) {
         
     }
@@ -81,6 +92,63 @@ class AddNewDoorViewController: UIViewController {
     }
     
     @IBAction func addBtn_Click(_ sender: Any) {
-        performSegue(withIdentifier: "administratorVCSegue", sender: nil)
+        
+        let nameStr: String = self.doorNameText.text!
+        let phoneStr: String = self.doorPhoneNoTextField.text!
+        let codeStr: String = self.doorCodeTextField.text!
+        let passwordStr: String = self.appPasswordTextField.text!
+        let emailStr: String = self.emailTextField.text!
+        
+        if nameStr.isEmpty || phoneStr.isEmpty || codeStr.isEmpty || passwordStr.isEmpty || emailStr.isEmpty {
+            self.showAlert(message: "Please fill in all fields!")
+            return
+        }
+        if !isValidEmail(testStr: emailStr) {
+            self.showAlert(message: "Input Valid Email Address!")
+            return
+        }
+//        self.performSegue(withIdentifier: "securityQestionsSegue", sender: self)
+        SVProgressHUD.show()
+        
+        DustanService.sharedInstance.addNewDoor(name: nameStr, phone: phoneStr, code: codeStr, password: passwordStr, email: emailStr, onSuccess: { (response) in
+            debugPrint(response)
+            SVProgressHUD.dismiss()
+            if let result = response.result.value as? NSDictionary{
+                if let status = result["status"] as? Bool {
+                    if status == true {
+                        if let token = result["data"] as? NSDictionary {
+                            if let tokenStr = token["token"] as? String {
+                                Constants.token = tokenStr
+                                self.performSegue(withIdentifier: "securityQestionsSegue", sender: self)
+                            }
+                            
+                        }
+                    } else {
+                        if let message = result["data"] as? String {
+                            self.showAlert(message: message)
+                            return
+                        }
+                    }
+                }
+            }
+        }, onFailure: { (error) in
+            debugPrint(error)
+            SVProgressHUD.dismiss()
+            self.showAlert(message: error.localizedDescription)
+        })
+    }
+    
+    func showAlert(message:String) {
+        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        // print("validate calendar: \(testStr)")
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: testStr)
     }
 }

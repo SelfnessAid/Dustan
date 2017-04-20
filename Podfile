@@ -8,4 +8,6 @@ target 'Dustan' do
   # Pods for Dustan
 pod 'IQKeyboardManagerSwift'
 pod 'DropDown'
+pod 'Alamofire'
+pod 'SVProgressHUD'
 end
