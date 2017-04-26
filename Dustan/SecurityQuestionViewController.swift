@@ -200,7 +200,7 @@ class SecurityQuestionViewController: UIViewController {
             if let result = response.result.value as? NSDictionary{
                 if let status = result["status"] as? Bool {
                     if status == true {
-                        self.performSegue(withIdentifier: "userTypeSegue", sender: nil)
+                        self.performSegue(withIdentifier: "mainSegue", sender: nil)
                     } else {
                         if let message = result["data"] as? String {
                             self.showAlert(message: message)

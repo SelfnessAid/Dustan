@@ -33,7 +33,20 @@ class ResetFactoryViewController: UIViewController {
     @IBAction func doorNameBtn_Click(_ sender: Any) {
     }
     @IBAction func yesBtn_Click(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: "GSM")
+        UserDefaults.standard.synchronize()
     }
     @IBAction func noBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    func showAlert(message:String) {
+        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

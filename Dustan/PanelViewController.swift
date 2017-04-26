@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PanelViewController: UIViewController, UIGestureRecognizerDelegate {
+class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
     
     var swipeGesture: UISwipeGestureRecognizer!
 
@@ -18,6 +18,8 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var doorNameBtn: UIButton!
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var centerImg: UIImageView!
+    
+    var door: Door = Door()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +41,147 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         centerImg.addGestureRecognizer(tapRecognizer)
         
+        if door.state == "false" {
+            centerImg.image = UIImage(named: "unlock")
+            infoLabel.text = "Unlocked"
+        }
+        
+    }
+    
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     func swipeAction(gesture: UISwipeGestureRecognizer) {
         if centerImg.image == #imageLiteral(resourceName: "lock") {
-            performSegue(withIdentifier: "unlockVCSegue", sender: nil)
+            let alertVC = UIAlertController(title: "Enter the keypad password", message: "", preferredStyle: .alert)
+            let OKAct = UIAlertAction(title: "OK", style: .default) { (act) in
+                let textField = (alertVC.textFields?[0])! as UITextField
+                DustanService.sharedInstance.doorLock(token: Constants.token, code: self.door.code, password: textField.text!, on: false, onSuccess: { (response) in
+                    if let result = response.result.value as? NSDictionary{
+                        if let status = result["status"] as? Bool {
+                            if status == true {
+                                self.centerImg.image = UIImage(named: "unlock")
+                                self.infoLabel.text = "Unlocked"
+                            } else {
+                                if let message = result["data"] as? String {
+                                    self.showAlert(message: message)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }, onFailure: { (error) in
+                    self.showAlert(message: error.localizedDescription)
+                })
+            }
+            let CancelAct = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alertVC.addTextField { (textField) in
+                
+            }
+            alertVC.addAction(OKAct)
+            alertVC.addAction(CancelAct)
+            self.present(alertVC, animated: true, completion: nil)
+
         }
     }
     
     func imageTapped(gestureRecognizer: UITapGestureRecognizer) {
-        let tappedImageView = gestureRecognizer.view!
+        let alertVC = UIAlertController(title: "Enter the keypad password", message: "", preferredStyle: .alert)
+        let OKAct = UIAlertAction(title: "OK", style: .default) { (act) in
+            let textField = (alertVC.textFields?[0])! as UITextField
+            let tappedImage = self.centerImg.image
+            if tappedImage == #imageLiteral(resourceName: "camera") {
+                DustanService.sharedInstance.doorCamera(token: Constants.token, code: self.door.code, password: textField.text!, on: true, onSuccess: { (response) in
+                    if let result = response.result.value as? NSDictionary{
+                        if let status = result["status"] as? Bool {
+                            if status == true {
+                                if let data = result["data"] as? NSDictionary {
+                                    
+                                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                                    let cameraVC = storyBoard.instantiateViewController(withIdentifier: "cameraVC") as! CameraViewController
+                                    cameraVC.url = (data["door_img"] as? String)!
+                                    self.navigationController?.pushViewController(cameraVC, animated:true)
+                                }
+                            } else {
+                                if let message = result["data"] as? String {
+                                    self.showAlert(message: message)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }, onFailure: { (error) in
+                    self.showAlert(message: error.localizedDescription)
+                })
+            } else if tappedImage == #imageLiteral(resourceName: "phone") {
+                DustanService.sharedInstance.doorBlock(token: Constants.token, code: self.door.code, password: textField.text!, on: true, onSuccess: { (response) in
+                    if let result = response.result.value as? NSDictionary{
+                        if let status = result["status"] as? Bool {
+                            if status == true {
+
+                            } else {
+                                if let message = result["data"] as? String {
+                                    self.showAlert(message: message)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }, onFailure: { (error) in
+                    self.showAlert(message: error.localizedDescription)
+                })
+            } else if tappedImage == #imageLiteral(resourceName: "bell") {
+                DustanService.sharedInstance.doorBell(token: Constants.token, code: self.door.code, password: textField.text!, on: true, onSuccess: { (response) in
+                    if let result = response.result.value as? NSDictionary{
+                        if let status = result["status"] as? Bool {
+                            if status == true {
+                                self.centerImg.image = UIImage(named: "unlock")
+                                self.infoLabel.text = "Unlocked"
+                            } else {
+                                if let message = result["data"] as? String {
+                                    self.showAlert(message: message)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }, onFailure: { (error) in
+                    self.showAlert(message: error.localizedDescription)
+                })
+            } else if tappedImage == #imageLiteral(resourceName: "unlock"){
+                DustanService.sharedInstance.doorLock(token: Constants.token, code: self.door.code, password: textField.text!, on: false, onSuccess: { (response) in
+                    if let result = response.result.value as? NSDictionary{
+                        if let status = result["status"] as? Bool {
+                            if status == true {
+                                self.centerImg.image = UIImage(named: "lock")
+                                self.infoLabel.text = "> Slide to unlock"
+                            } else {
+                                if let message = result["data"] as? String {
+                                    self.showAlert(message: message)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                }, onFailure: { (error) in
+                    self.showAlert(message: error.localizedDescription)
+                })
+            }
+        }
+        let CancelAct = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertVC.addTextField { (textField) in
+            
+        }
+        alertVC.addAction(OKAct)
+        alertVC.addAction(CancelAct)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
+    func showAlert(message:String) {
+        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +198,8 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate {
             infoLabel.text = "Press to ring door bell"
         } else if img == #imageLiteral(resourceName: "lock") {
             infoLabel.text = "> Slide to unlock"
+        } else if img == #imageLiteral(resourceName: "unlock") {
+            infoLabel.text = "Press to lock"
         }
     }
     

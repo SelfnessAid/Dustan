@@ -68,4 +68,7 @@ class DeleteUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
     
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20E1A0FECB2A410AEAAA0BFD /* Pods_Dustan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE27FD6A14BD2FF9D7B272C /* Pods_Dustan.framework */; };
+		4B45B7B31EB04EB700DCEB14 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45B7B21EB04EB700DCEB14 /* CameraViewController.swift */; };
 		4B58D3911E8374A6000D155B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3901E8374A6000D155B /* AppDelegate.swift */; };
 		4B58D3A31E83784D000D155B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B58D3A21E83784D000D155B /* Main.storyboard */; };
 		4B58D3A51E837895000D155B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B58D3A41E837895000D155B /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B45B7B21EB04EB700DCEB14 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		4B58D38D1E8374A6000D155B /* Dustan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dustan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B58D3901E8374A6000D155B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B58D39C1E8374A6000D155B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				4B58D3C71E837936000D155B /* SecurityQuestionViewController.swift */,
 				4B58D3C81E837936000D155B /* SelectUserViewController.swift */,
 				4B58D3C91E837936000D155B /* PasswordViewController.swift */,
+				4B45B7B21EB04EB700DCEB14 /* CameraViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				4B58D3CC1E837936000D155B /* AddNewDoorViewController.swift in Sources */,
 				4B58D3D41E837936000D155B /* UserListViewController.swift in Sources */,
 				4B58D3AC1E8378FB000D155B /* UserTableViewCell.swift in Sources */,
+				4B45B7B31EB04EB700DCEB14 /* CameraViewController.swift in Sources */,
 				4B58D3DD1E837936000D155B /* FAQViewController.swift in Sources */,
 				4B58D3D11E837936000D155B /* DoorListViewController.swift in Sources */,
 				4B58D3CD1E837936000D155B /* AdminstratorViewController.swift in Sources */,

@@ -63,4 +63,7 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
         performSegue(withIdentifier: "deleteUserSegue", sender: nil)
         
     }
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 }

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Dustan/SecurityQuestionViewController.swift"
-            timestampString = "514325675.284591"
+            filePath = "Dustan/ManageDoorViewController.swift"
+            timestampString = "514838678.374539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
-            landmarkName = "continueBtn_Click(_:)"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Dustan/SecurityQuestionViewController.swift"
-            timestampString = "514325448.121446"
+            filePath = "Dustan/DoorStatusViewController.swift"
+            timestampString = "514839407.47326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
-            landmarkName = "continueBtn_Click(_:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "doorStatusBtn_Click(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,44 +41,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Dustan/SecurityQuestionViewController.swift"
-            timestampString = "514325670.272736"
+            filePath = "Dustan/PanelViewController.swift"
+            timestampString = "514876809.122933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
-            landmarkName = "continueBtn_Click(_:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "swipeAction(gesture:)"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Dustan.SecurityQuestionViewController.(continueBtn_Click (Any) -&gt; ()).(closure #1)"
+                  symbolName = "Dustan.PanelViewController.(swipeAction (gesture : __ObjC.UISwipeGestureRecognizer) -&gt; ()).(closure #1).(closure #1)"
                   moduleName = "Dustan"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mobilestar/Documents/Work/David/Dustan/Dustan/SecurityQuestionViewController.swift"
-                  timestampString = "514325969.992828"
+                  urlString = "file:///Users/mobilestar/Documents/Work/David/Dustan/Dustan/PanelViewController.swift"
+                  timestampString = "514882818.137201"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "200"
-                  endingLineNumber = "200"
-                  offsetFromSymbolStart = "941">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "564">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Dustan.SecurityQuestionViewController.(continueBtn_Click (Any) -&gt; ()).(closure #1)"
+                  symbolName = "Dustan.PanelViewController.(swipeAction (gesture : __ObjC.UISwipeGestureRecognizer) -&gt; ()).(closure #1).(closure #1)"
                   moduleName = "Dustan"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mobilestar/Documents/Work/David/Dustan/Dustan/SecurityQuestionViewController.swift"
-                  timestampString = "514325969.998051"
+                  urlString = "file:///Users/mobilestar/Documents/Work/David/Dustan/Dustan/PanelViewController.swift"
+                  timestampString = "514882818.142359"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "200"
-                  endingLineNumber = "200"
-                  offsetFromSymbolStart = "1441">
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "1251">
                </Location>
             </Locations>
          </BreakpointContent>

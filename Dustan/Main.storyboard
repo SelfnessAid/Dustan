@@ -317,255 +317,12 @@ security questions below:</string>
                         <outlet property="question1Btn" destination="AtE-F1-0PC" id="ydi-ml-sWX"/>
                         <outlet property="question2Btn" destination="rbP-P4-ecf" id="t3R-Zp-uGp"/>
                         <outlet property="question3Btn" destination="cpD-6P-gIB" id="0rM-xK-Ths"/>
+                        <segue destination="4eb-zv-2Fd" kind="show" identifier="mainSegue" id="a1K-1d-juO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Kh-hX-9gm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1636" y="16"/>
-        </scene>
-        <!--Select User View Controller-->
-        <scene sceneID="bwr-XG-hY2">
-            <objects>
-                <viewController id="T2a-J3-waa" customClass="SelectUserViewController" customModule="Dustan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tMv-Dz-1mE"/>
-                        <viewControllerLayoutGuide type="bottom" id="Fud-J8-r2O"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qsQ-zF-bIe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNF-3a-dZT">
-                                <rect key="frame" x="158" y="20" width="59" height="69"/>
-                                <state key="normal" image="logo"/>
-                                <connections>
-                                    <action selector="logoBtn_Click:" destination="T2a-J3-waa" eventType="touchUpInside" id="bK9-uj-egO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKx-Wu-w6t">
-                                <rect key="frame" x="16" y="571" width="31" height="46"/>
-                                <state key="normal" image="lock"/>
-                                <connections>
-                                    <action selector="lockBtn_Click:" destination="T2a-J3-waa" eventType="touchUpInside" id="btd-Vj-vLu"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underline_title" translatesAutoresizingMaskIntoConstraints="NO" id="5R3-KW-xNB">
-                                <rect key="frame" x="0.0" y="89" width="375" height="16"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Hdr-mt-Vlr">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="l10-8f-OBH"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swt-jf-ZEs">
-                                <rect key="frame" x="78" y="175" width="219" height="48"/>
-                                <string key="text">Are you an administrator
-or a User ?</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3k-41-fb5">
-                                <rect key="frame" x="127" y="293" width="120" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Administrator">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="adminstratorBtn_Click:" destination="T2a-J3-waa" eventType="touchUpInside" id="63s-2j-nPd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwe-zY-hUy">
-                                <rect key="frame" x="166" y="379" width="42" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="User">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="userBtn_Click:" destination="T2a-J3-waa" eventType="touchUpInside" id="4dW-jR-2F4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oPV-Mc-8Ac">
-                                <rect key="frame" x="263" y="570" width="96" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="oPV-Mc-8Ac" secondAttribute="height" multiplier="2:1" id="End-UE-Jav"/>
-                                </constraints>
-                                <state key="normal">
-                                    <string key="title">Door
-Name</string>
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="doorNameBtn_Click:" destination="T2a-J3-waa" eventType="touchUpInside" id="AoV-dY-xSV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOF-Jj-RyL">
-                                <rect key="frame" x="26" y="39.5" width="40" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="art-J1-pkO"/>
-                                    <constraint firstAttribute="height" constant="30" id="pX1-fL-EhN"/>
-                                </constraints>
-                                <state key="normal" image="back"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="VKx-Wu-w6t" firstAttribute="leading" secondItem="qsQ-zF-bIe" secondAttribute="leadingMargin" id="1rj-Si-Vyh"/>
-                            <constraint firstAttribute="trailing" secondItem="Hdr-mt-Vlr" secondAttribute="trailing" id="1rk-8A-A3q"/>
-                            <constraint firstItem="5R3-KW-xNB" firstAttribute="leading" secondItem="qsQ-zF-bIe" secondAttribute="leading" id="7Zb-hc-Kqf"/>
-                            <constraint firstItem="Hdr-mt-Vlr" firstAttribute="leading" secondItem="qsQ-zF-bIe" secondAttribute="leading" id="BtB-mm-lxV"/>
-                            <constraint firstItem="oPV-Mc-8Ac" firstAttribute="trailing" secondItem="qsQ-zF-bIe" secondAttribute="trailingMargin" id="ETU-pg-eoh"/>
-                            <constraint firstItem="bwe-zY-hUy" firstAttribute="top" secondItem="I3k-41-fb5" secondAttribute="bottom" constant="50" id="F3L-Lb-Hqa"/>
-                            <constraint firstItem="yNF-3a-dZT" firstAttribute="centerX" secondItem="qsQ-zF-bIe" secondAttribute="centerX" id="NP3-zW-TyW"/>
-                            <constraint firstItem="Swt-jf-ZEs" firstAttribute="top" secondItem="5R3-KW-xNB" secondAttribute="bottom" constant="70" id="SXq-aa-gLn"/>
-                            <constraint firstAttribute="trailing" secondItem="5R3-KW-xNB" secondAttribute="trailing" id="YMl-6g-78K"/>
-                            <constraint firstItem="I3k-41-fb5" firstAttribute="centerX" secondItem="qsQ-zF-bIe" secondAttribute="centerX" id="dbM-vP-PQA"/>
-                            <constraint firstItem="pOF-Jj-RyL" firstAttribute="centerY" secondItem="yNF-3a-dZT" secondAttribute="centerY" id="emu-8B-uFA"/>
-                            <constraint firstItem="bwe-zY-hUy" firstAttribute="centerX" secondItem="qsQ-zF-bIe" secondAttribute="centerX" id="f4g-zI-dRW"/>
-                            <constraint firstItem="5R3-KW-xNB" firstAttribute="top" secondItem="yNF-3a-dZT" secondAttribute="bottom" id="hFg-Ga-1y6"/>
-                            <constraint firstItem="pOF-Jj-RyL" firstAttribute="leading" secondItem="qsQ-zF-bIe" secondAttribute="leadingMargin" constant="10" id="hw6-0p-nAf"/>
-                            <constraint firstItem="Hdr-mt-Vlr" firstAttribute="top" secondItem="VKx-Wu-w6t" secondAttribute="bottom" id="k7i-4J-5gP"/>
-                            <constraint firstItem="Swt-jf-ZEs" firstAttribute="centerX" secondItem="qsQ-zF-bIe" secondAttribute="centerX" id="lCr-90-Wf5"/>
-                            <constraint firstItem="oPV-Mc-8Ac" firstAttribute="centerY" secondItem="VKx-Wu-w6t" secondAttribute="centerY" id="lUO-Tt-4wf"/>
-                            <constraint firstItem="Fud-J8-r2O" firstAttribute="top" secondItem="Hdr-mt-Vlr" secondAttribute="bottom" id="sRS-mn-rkB"/>
-                            <constraint firstItem="I3k-41-fb5" firstAttribute="top" secondItem="Swt-jf-ZEs" secondAttribute="bottom" constant="70" id="y0o-B9-99x"/>
-                            <constraint firstItem="yNF-3a-dZT" firstAttribute="top" secondItem="tMv-Dz-1mE" secondAttribute="bottom" id="zTc-kD-nkG"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="doorNameBtn" destination="oPV-Mc-8Ac" id="SSq-2E-ORj"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gwU-ak-gqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1034" y="-382"/>
-        </scene>
-        <!--Password View Controller-->
-        <scene sceneID="ZfD-Xy-0Ou">
-            <objects>
-                <viewController id="1Fv-Tm-syO" customClass="PasswordViewController" customModule="Dustan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wSj-HD-6nN"/>
-                        <viewControllerLayoutGuide type="bottom" id="Hq6-Mv-OeM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Rn9-O3-jPf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vab-iv-j0w">
-                                <rect key="frame" x="158" y="20" width="59" height="69"/>
-                                <state key="normal" image="logo"/>
-                                <connections>
-                                    <action selector="logoBtn_Click:" destination="1Fv-Tm-syO" eventType="touchUpInside" id="QDw-fh-stJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E0N-Zk-1hW">
-                                <rect key="frame" x="16" y="571" width="31" height="46"/>
-                                <state key="normal" image="lock"/>
-                                <connections>
-                                    <action selector="lockBtn_Click:" destination="1Fv-Tm-syO" eventType="touchUpInside" id="2U4-dW-Br9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="H18-ti-Fhe">
-                                <rect key="frame" x="263" y="570" width="96" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="H18-ti-Fhe" secondAttribute="height" multiplier="2:1" id="DTZ-4t-11g"/>
-                                </constraints>
-                                <state key="normal">
-                                    <string key="title">Door
-Name</string>
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="doorNameBtn_Click:" destination="1Fv-Tm-syO" eventType="touchUpInside" id="l9o-nT-3ap"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="JLa-Sh-UoY">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="s7V-Ow-WZB"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underline_title" translatesAutoresizingMaskIntoConstraints="NO" id="sIX-e6-LLn">
-                                <rect key="frame" x="0.0" y="89" width="375" height="16"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Password:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voc-qH-DSK">
-                                <rect key="frame" x="115" y="281.5" width="144" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDn-CF-osY">
-                                <rect key="frame" x="115" y="326" width="144" height="17"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xF9-Ni-8ys">
-                                <rect key="frame" x="172" y="417" width="30" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Go">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="goBtn_Click:" destination="1Fv-Tm-syO" eventType="touchUpInside" id="2tE-YC-soX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0v-Mu-HlI">
-                                <rect key="frame" x="115" y="353" width="144" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Forget the password ?">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="forgetPasswordBtn_Click:" destination="1Fv-Tm-syO" eventType="touchUpInside" id="CFy-Qz-JIT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iug-sN-AcR">
-                                <rect key="frame" x="26" y="39" width="40" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="xr0-VJ-HXf"/>
-                                    <constraint firstAttribute="width" constant="40" id="zEu-44-Ls6"/>
-                                </constraints>
-                                <state key="normal" image="back"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="T0v-Mu-HlI" firstAttribute="centerX" secondItem="Rn9-O3-jPf" secondAttribute="centerX" id="0Al-e5-xJc"/>
-                            <constraint firstItem="H18-ti-Fhe" firstAttribute="trailing" secondItem="Rn9-O3-jPf" secondAttribute="trailingMargin" id="0Tq-44-ayf"/>
-                            <constraint firstItem="xF9-Ni-8ys" firstAttribute="centerX" secondItem="Rn9-O3-jPf" secondAttribute="centerX" id="6jE-JT-taQ"/>
-                            <constraint firstItem="iug-sN-AcR" firstAttribute="centerY" secondItem="vab-iv-j0w" secondAttribute="centerY" id="9Lc-cO-TDa"/>
-                            <constraint firstItem="iDn-CF-osY" firstAttribute="width" secondItem="voc-qH-DSK" secondAttribute="width" id="BSY-37-E5z"/>
-                            <constraint firstItem="vab-iv-j0w" firstAttribute="top" secondItem="wSj-HD-6nN" secondAttribute="bottom" id="Chq-ro-EWV"/>
-                            <constraint firstItem="xF9-Ni-8ys" firstAttribute="top" secondItem="T0v-Mu-HlI" secondAttribute="bottom" constant="35" id="DdJ-gI-oWy"/>
-                            <constraint firstItem="iDn-CF-osY" firstAttribute="leading" secondItem="voc-qH-DSK" secondAttribute="leading" id="KO7-G8-6XW"/>
-                            <constraint firstItem="JLa-Sh-UoY" firstAttribute="top" secondItem="E0N-Zk-1hW" secondAttribute="bottom" id="PMr-sz-gzO"/>
-                            <constraint firstItem="voc-qH-DSK" firstAttribute="centerX" secondItem="Rn9-O3-jPf" secondAttribute="centerX" id="Qqg-hK-UsX"/>
-                            <constraint firstItem="iug-sN-AcR" firstAttribute="leading" secondItem="Rn9-O3-jPf" secondAttribute="leadingMargin" constant="10" id="RDt-oz-qVH"/>
-                            <constraint firstItem="iDn-CF-osY" firstAttribute="top" secondItem="voc-qH-DSK" secondAttribute="bottom" constant="20" id="WAn-gW-AnM"/>
-                            <constraint firstAttribute="trailing" secondItem="JLa-Sh-UoY" secondAttribute="trailing" id="YNR-He-hlk"/>
-                            <constraint firstAttribute="trailing" secondItem="sIX-e6-LLn" secondAttribute="trailing" id="ag4-61-HbW"/>
-                            <constraint firstItem="voc-qH-DSK" firstAttribute="centerY" secondItem="Rn9-O3-jPf" secondAttribute="centerY" constant="-40" id="eEo-07-t4I"/>
-                            <constraint firstItem="T0v-Mu-HlI" firstAttribute="top" secondItem="iDn-CF-osY" secondAttribute="bottom" constant="10" id="eT4-JS-RMd"/>
-                            <constraint firstItem="E0N-Zk-1hW" firstAttribute="leading" secondItem="Rn9-O3-jPf" secondAttribute="leadingMargin" id="hZ5-Lx-2kv"/>
-                            <constraint firstItem="vab-iv-j0w" firstAttribute="centerX" secondItem="Rn9-O3-jPf" secondAttribute="centerX" id="jsz-VM-WOm"/>
-                            <constraint firstItem="JLa-Sh-UoY" firstAttribute="leading" secondItem="Rn9-O3-jPf" secondAttribute="leading" id="mdd-VY-6KG"/>
-                            <constraint firstItem="H18-ti-Fhe" firstAttribute="centerY" secondItem="E0N-Zk-1hW" secondAttribute="centerY" id="myz-n4-m3t"/>
-                            <constraint firstItem="sIX-e6-LLn" firstAttribute="leading" secondItem="Rn9-O3-jPf" secondAttribute="leading" id="ooN-Dr-vCL"/>
-                            <constraint firstItem="sIX-e6-LLn" firstAttribute="top" secondItem="vab-iv-j0w" secondAttribute="bottom" id="w1S-lL-8IP"/>
-                            <constraint firstItem="Hq6-Mv-OeM" firstAttribute="top" secondItem="JLa-Sh-UoY" secondAttribute="bottom" id="xfl-cn-uGk"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="doorNameBtn" destination="H18-ti-Fhe" id="2T3-uC-nz3"/>
-                        <outlet property="passwordTextField" destination="iDn-CF-osY" id="ayW-gX-ijP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vlQ-uh-DJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-351" y="-383"/>
         </scene>
         <!--Add New Door View Controller-->
         <scene sceneID="brd-9P-DSk">
@@ -771,113 +528,6 @@ Name</string>
             </objects>
             <point key="canvasLocation" x="-2492" y="16"/>
         </scene>
-        <!--Adminstrator View Controller-->
-        <scene sceneID="OR2-4E-ueu">
-            <objects>
-                <viewController storyboardIdentifier="administratorVC" id="h9E-CE-TNc" customClass="AdminstratorViewController" customModule="Dustan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="65r-Rv-LYy"/>
-                        <viewControllerLayoutGuide type="bottom" id="tXI-gc-9uC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cB4-Ws-QA5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underline_title" translatesAutoresizingMaskIntoConstraints="NO" id="yWj-9W-mYx">
-                                <rect key="frame" x="0.0" y="89" width="375" height="16"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="jSg-bi-eOz">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="tIv-Nw-x2q"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gU1-OK-Uva">
-                                <rect key="frame" x="263" y="570" width="96" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="gU1-OK-Uva" secondAttribute="height" multiplier="2:1" id="pEL-GQ-cMl"/>
-                                </constraints>
-                                <state key="normal">
-                                    <string key="title">Door
-Name</string>
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doorNameBtn_Click:" destination="h9E-CE-TNc" eventType="touchUpInside" id="guc-kT-iWb"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="dxo-sS-3fb">
-                                <rect key="frame" x="135" y="281" width="105" height="105"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3QJ-Rd-lfG">
-                                <rect key="frame" x="81.5" y="393" width="212" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal">
-                                    <string key="title">Full Access granted
-Administrator Privileges</string>
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="fullAccessBtn_Click:" destination="h9E-CE-TNc" eventType="touchUpInside" id="ctW-ig-Ofv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ud4-vT-gLT">
-                                <rect key="frame" x="16" y="571" width="31" height="46"/>
-                                <state key="normal" image="lock"/>
-                                <connections>
-                                    <action selector="lockBtn_Click:" destination="h9E-CE-TNc" eventType="touchUpInside" id="BnN-w4-O9W"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVX-Lm-WbQ">
-                                <rect key="frame" x="158" y="20" width="59" height="69"/>
-                                <state key="normal" image="logo"/>
-                                <connections>
-                                    <action selector="logoBtn_Click:" destination="h9E-CE-TNc" eventType="touchUpInside" id="1D0-4s-jUA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGE-1v-0OF">
-                                <rect key="frame" x="26" y="39" width="40" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="4xy-9o-n2s"/>
-                                    <constraint firstAttribute="width" constant="40" id="ACP-Mb-6mq"/>
-                                </constraints>
-                                <state key="normal" image="back"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="DVX-Lm-WbQ" firstAttribute="centerX" secondItem="cB4-Ws-QA5" secondAttribute="centerX" id="1pt-nc-Dug"/>
-                            <constraint firstItem="3QJ-Rd-lfG" firstAttribute="top" secondItem="dxo-sS-3fb" secondAttribute="bottom" constant="7.5" id="EI8-LG-mPa"/>
-                            <constraint firstItem="DVX-Lm-WbQ" firstAttribute="top" secondItem="65r-Rv-LYy" secondAttribute="bottom" id="Kmc-B6-zEW"/>
-                            <constraint firstItem="jSg-bi-eOz" firstAttribute="top" secondItem="Ud4-vT-gLT" secondAttribute="bottom" id="LSb-ah-ANv"/>
-                            <constraint firstItem="jSg-bi-eOz" firstAttribute="leading" secondItem="cB4-Ws-QA5" secondAttribute="leading" id="MUP-pI-HnE"/>
-                            <constraint firstItem="tXI-gc-9uC" firstAttribute="top" secondItem="jSg-bi-eOz" secondAttribute="bottom" id="PoW-j2-pbi"/>
-                            <constraint firstItem="yWj-9W-mYx" firstAttribute="top" secondItem="DVX-Lm-WbQ" secondAttribute="bottom" id="RXZ-lS-peE"/>
-                            <constraint firstAttribute="trailing" secondItem="yWj-9W-mYx" secondAttribute="trailing" id="UsH-5e-pID"/>
-                            <constraint firstAttribute="trailing" secondItem="jSg-bi-eOz" secondAttribute="trailing" id="Wlx-sh-1ax"/>
-                            <constraint firstItem="gU1-OK-Uva" firstAttribute="centerY" secondItem="Ud4-vT-gLT" secondAttribute="centerY" id="XO0-2X-2f4"/>
-                            <constraint firstItem="dxo-sS-3fb" firstAttribute="centerY" secondItem="cB4-Ws-QA5" secondAttribute="centerY" id="XSB-Lr-600"/>
-                            <constraint firstItem="dxo-sS-3fb" firstAttribute="centerX" secondItem="cB4-Ws-QA5" secondAttribute="centerX" id="fc1-mx-CHI"/>
-                            <constraint firstItem="gU1-OK-Uva" firstAttribute="trailing" secondItem="cB4-Ws-QA5" secondAttribute="trailingMargin" id="fpd-EE-M6V"/>
-                            <constraint firstItem="yWj-9W-mYx" firstAttribute="leading" secondItem="cB4-Ws-QA5" secondAttribute="leading" id="pm4-4w-eLs"/>
-                            <constraint firstItem="HGE-1v-0OF" firstAttribute="centerY" secondItem="DVX-Lm-WbQ" secondAttribute="centerY" id="vAB-u8-8vQ"/>
-                            <constraint firstItem="HGE-1v-0OF" firstAttribute="leading" secondItem="cB4-Ws-QA5" secondAttribute="leadingMargin" constant="10" id="zjJ-mZ-iE5"/>
-                            <constraint firstItem="Ud4-vT-gLT" firstAttribute="leading" secondItem="cB4-Ws-QA5" secondAttribute="leadingMargin" id="zjS-Df-oLv"/>
-                            <constraint firstItem="3QJ-Rd-lfG" firstAttribute="centerX" secondItem="cB4-Ws-QA5" secondAttribute="centerX" id="zsz-x9-gV1"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="doorNameBtn" destination="gU1-OK-Uva" id="zlK-XR-4mb"/>
-                        <outlet property="fullAccessBtn" destination="3QJ-Rd-lfG" id="ts7-OE-8cF"/>
-                        <outlet property="lockBtn" destination="Ud4-vT-gLT" id="8W4-wh-KJA"/>
-                        <outlet property="logoBtn" destination="DVX-Lm-WbQ" id="DI1-9w-wie"/>
-                        <segue destination="IXE-Ic-TkG" kind="show" identifier="panelVCSegue" id="8B2-QJ-qnW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BY5-Th-3pB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="282" y="16"/>
-        </scene>
         <!--Panel View Controller-->
         <scene sceneID="uDL-Gh-56o">
             <objects>
@@ -943,7 +593,7 @@ Name</string>
                                     <constraint firstAttribute="width" secondItem="Oke-N5-JAP" secondAttribute="height" multiplier="1:1" id="CRS-IZ-kR7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt; Slide to unlock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGl-Md-Vas">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt; Slide to unlock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGl-Md-Vas">
                                 <rect key="frame" x="113" y="394" width="149.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -956,6 +606,9 @@ Name</string>
                                     <constraint firstAttribute="height" constant="30" id="zVh-Qf-aue"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="IXE-Ic-TkG" eventType="touchUpInside" id="psW-t8-ss2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -992,17 +645,16 @@ Name</string>
                         <outlet property="infoLabel" destination="bGl-Md-Vas" id="8ux-In-ze7"/>
                         <outlet property="topLeftBtn" destination="Kv3-R5-1it" id="bHl-V3-NDr"/>
                         <outlet property="topRightBtn" destination="2aG-Sc-mrA" id="M8K-rO-Kw8"/>
-                        <segue destination="scb-DH-1f4" kind="show" identifier="unlockVCSegue" id="LvO-Uf-HwT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBx-xA-ibI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="16"/>
+            <point key="canvasLocation" x="1404" y="-1531"/>
         </scene>
-        <!--Un Lock View Controller-->
+        <!--Camera View Controller-->
         <scene sceneID="TVx-Hh-lxa">
             <objects>
-                <viewController id="scb-DH-1f4" customClass="UnLockViewController" customModule="Dustan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cameraVC" id="scb-DH-1f4" customClass="CameraViewController" customModule="Dustan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eCZ-8I-udn"/>
                         <viewControllerLayoutGuide type="bottom" id="cIZ-39-Tit"/>
@@ -1014,9 +666,6 @@ Name</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVN-cD-tTF">
                                 <rect key="frame" x="158" y="20" width="59" height="69"/>
                                 <state key="normal" image="logo"/>
-                                <connections>
-                                    <action selector="logoBtn_Click:" destination="scb-DH-1f4" eventType="touchUpInside" id="QgK-6X-o4G"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underline_title" translatesAutoresizingMaskIntoConstraints="NO" id="Gci-SO-8dj">
                                 <rect key="frame" x="0.0" y="89" width="375" height="16"/>
@@ -1024,75 +673,49 @@ Name</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Lre-QP-asG">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="rcR-0q-SPG"/>
+                                    <constraint firstAttribute="height" constant="50" id="VvR-rz-XCK"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="24y-li-lOY">
-                                <rect key="frame" x="263" y="569" width="96" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="24y-li-lOY" secondAttribute="height" multiplier="2:1" id="OMF-ao-qMO"/>
-                                </constraints>
-                                <state key="normal">
-                                    <string key="title">Door
-Name</string>
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doorNameBtn_Click:" destination="scb-DH-1f4" eventType="touchUpInside" id="gOQ-ip-feW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msx-6K-zH0">
-                                <rect key="frame" x="133" y="283" width="109" height="101"/>
-                                <state key="normal" image="unlock"/>
-                                <connections>
-                                    <action selector="unlockBtn_Click:" destination="scb-DH-1f4" eventType="touchUpInside" id="Yjy-al-8dh"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlocked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNz-iq-m81">
-                                <rect key="frame" x="145" y="389" width="85" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uam-T2-OeZ">
                                 <rect key="frame" x="26" y="39" width="40" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="9Lg-id-LVe"/>
-                                    <constraint firstAttribute="height" constant="30" id="BEk-mm-dfd"/>
+                                    <constraint firstAttribute="width" constant="40" id="ORI-Jz-mPU"/>
+                                    <constraint firstAttribute="height" constant="30" id="bnq-7v-31w"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="scb-DH-1f4" eventType="touchUpInside" id="CxF-CI-Pte"/>
+                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l10-tB-H6q">
+                                <rect key="frame" x="0.0" y="135" width="375" height="482"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KVN-cD-tTF" firstAttribute="centerX" secondItem="uuP-4D-5cs" secondAttribute="centerX" id="44S-X4-i02"/>
-                            <constraint firstItem="uam-T2-OeZ" firstAttribute="leading" secondItem="uuP-4D-5cs" secondAttribute="leadingMargin" constant="10" id="4cV-0s-mCA"/>
-                            <constraint firstItem="Gci-SO-8dj" firstAttribute="top" secondItem="KVN-cD-tTF" secondAttribute="bottom" id="8dX-b3-wmi"/>
-                            <constraint firstItem="Msx-6K-zH0" firstAttribute="centerY" secondItem="uuP-4D-5cs" secondAttribute="centerY" id="BR5-9Q-gpT"/>
-                            <constraint firstItem="hNz-iq-m81" firstAttribute="centerX" secondItem="uuP-4D-5cs" secondAttribute="centerX" id="Beh-yM-pE6"/>
-                            <constraint firstItem="uam-T2-OeZ" firstAttribute="centerY" secondItem="KVN-cD-tTF" secondAttribute="centerY" id="EfE-qR-O3J"/>
-                            <constraint firstItem="Lre-QP-asG" firstAttribute="leading" secondItem="uuP-4D-5cs" secondAttribute="leading" id="FnU-Xt-9nn"/>
-                            <constraint firstItem="24y-li-lOY" firstAttribute="trailing" secondItem="uuP-4D-5cs" secondAttribute="trailingMargin" id="GR7-tN-Waa"/>
-                            <constraint firstItem="cIZ-39-Tit" firstAttribute="top" secondItem="Lre-QP-asG" secondAttribute="bottom" id="HQl-6b-uTz"/>
-                            <constraint firstItem="Lre-QP-asG" firstAttribute="top" secondItem="24y-li-lOY" secondAttribute="bottom" id="Iza-US-iCj"/>
-                            <constraint firstItem="hNz-iq-m81" firstAttribute="top" secondItem="Msx-6K-zH0" secondAttribute="bottom" constant="5" id="ZJw-qx-Swm"/>
-                            <constraint firstAttribute="trailing" secondItem="Lre-QP-asG" secondAttribute="trailing" id="dsS-sh-AaN"/>
-                            <constraint firstItem="Msx-6K-zH0" firstAttribute="centerX" secondItem="uuP-4D-5cs" secondAttribute="centerX" id="fRz-69-xi9"/>
-                            <constraint firstAttribute="trailing" secondItem="Gci-SO-8dj" secondAttribute="trailing" id="k3J-Cd-dWd"/>
-                            <constraint firstItem="Gci-SO-8dj" firstAttribute="leading" secondItem="uuP-4D-5cs" secondAttribute="leading" id="xDp-Qz-gq8"/>
-                            <constraint firstItem="KVN-cD-tTF" firstAttribute="top" secondItem="eCZ-8I-udn" secondAttribute="bottom" id="zxq-wB-CLu"/>
+                            <constraint firstItem="uam-T2-OeZ" firstAttribute="leading" secondItem="uuP-4D-5cs" secondAttribute="leadingMargin" constant="10" id="5mn-OY-GJa"/>
+                            <constraint firstAttribute="trailing" secondItem="Lre-QP-asG" secondAttribute="trailing" id="6oo-bN-CYp"/>
+                            <constraint firstAttribute="trailing" secondItem="l10-tB-H6q" secondAttribute="trailing" id="HHk-cC-eqV"/>
+                            <constraint firstAttribute="trailing" secondItem="Gci-SO-8dj" secondAttribute="trailing" id="I19-v8-Ph4"/>
+                            <constraint firstItem="KVN-cD-tTF" firstAttribute="centerX" secondItem="uuP-4D-5cs" secondAttribute="centerX" id="K79-SG-Tge"/>
+                            <constraint firstItem="cIZ-39-Tit" firstAttribute="top" secondItem="Lre-QP-asG" secondAttribute="bottom" id="RoP-VF-MJV"/>
+                            <constraint firstItem="uam-T2-OeZ" firstAttribute="centerY" secondItem="KVN-cD-tTF" secondAttribute="centerY" id="Xcp-9v-zVg"/>
+                            <constraint firstItem="Lre-QP-asG" firstAttribute="top" secondItem="l10-tB-H6q" secondAttribute="bottom" id="da5-cS-jic"/>
+                            <constraint firstItem="Gci-SO-8dj" firstAttribute="top" secondItem="KVN-cD-tTF" secondAttribute="bottom" id="fOs-Rv-Mhm"/>
+                            <constraint firstItem="Gci-SO-8dj" firstAttribute="leading" secondItem="uuP-4D-5cs" secondAttribute="leading" id="ijj-T8-M6A"/>
+                            <constraint firstItem="Lre-QP-asG" firstAttribute="leading" secondItem="uuP-4D-5cs" secondAttribute="leading" id="ixz-e6-EIC"/>
+                            <constraint firstItem="KVN-cD-tTF" firstAttribute="top" secondItem="eCZ-8I-udn" secondAttribute="bottom" id="mhY-FS-Lvz"/>
+                            <constraint firstItem="l10-tB-H6q" firstAttribute="leading" secondItem="uuP-4D-5cs" secondAttribute="leading" id="nh1-3K-cNV"/>
+                            <constraint firstItem="l10-tB-H6q" firstAttribute="top" secondItem="Gci-SO-8dj" secondAttribute="bottom" constant="30" id="up6-6r-bsN"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="doorNameBtn" destination="24y-li-lOY" id="NZi-a2-b11"/>
-                        <outlet property="logoBtn" destination="KVN-cD-tTF" id="gEX-yl-h2J"/>
-                        <outlet property="unlockBtn" destination="Msx-6K-zH0" id="6bF-eh-Eea"/>
-                        <segue destination="4eb-zv-2Fd" kind="show" identifier="homeVCSegue" id="lsE-on-LaG"/>
+                        <outlet property="imageView" destination="l10-tB-H6q" id="K7b-3P-ibq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Pg-by-7bv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="16"/>
+            <point key="canvasLocation" x="2418" y="-1509"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="mc7-HY-Q6M">
@@ -1163,20 +786,10 @@ Name</string>
                                     <action selector="administratorBtn_Click:" destination="4eb-zv-2Fd" eventType="touchUpInside" id="I1b-Vk-Mh5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWF-mH-Ywp">
-                                <rect key="frame" x="145" y="237" width="85" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Add Door">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addDoorBtn_Click:" destination="4eb-zv-2Fd" eventType="touchUpInside" id="iNB-UW-aM1"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJj-y0-IF8">
-                                <rect key="frame" x="134.5" y="278" width="106" height="36"/>
+                                <rect key="frame" x="122" y="237" width="131" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Door Status">
+                                <state key="normal" title="Manage Doors">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1184,7 +797,7 @@ Name</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4b-Zb-KXu">
-                                <rect key="frame" x="161.5" y="319" width="52" height="36"/>
+                                <rect key="frame" x="161.5" y="278" width="52" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Alerts">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1194,7 +807,7 @@ Name</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1M-fn-5S8">
-                                <rect key="frame" x="168.5" y="401" width="38" height="36"/>
+                                <rect key="frame" x="168.5" y="360" width="38" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="FAQ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1204,7 +817,7 @@ Name</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwH-NS-vk8">
-                                <rect key="frame" x="151" y="442" width="73" height="36"/>
+                                <rect key="frame" x="151" y="401" width="73" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Website">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1214,7 +827,7 @@ Name</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6N-vB-GHl">
-                                <rect key="frame" x="150.5" y="483" width="74" height="36"/>
+                                <rect key="frame" x="150.5" y="442" width="74" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Settings">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1224,7 +837,7 @@ Name</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DW-V5-wLP">
-                                <rect key="frame" x="151.5" y="360" width="72" height="36"/>
+                                <rect key="frame" x="151.5" y="319" width="72" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Support">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1240,16 +853,18 @@ Name</string>
                                     <constraint firstAttribute="width" constant="40" id="gs2-HT-taz"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="4eb-zv-2Fd" eventType="touchUpInside" id="gFj-w9-BzQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="WJj-y0-IF8" firstAttribute="top" secondItem="ybd-Y5-U7l" secondAttribute="bottom" constant="5" id="2sG-Mx-aXF"/>
                             <constraint firstItem="l6N-vB-GHl" firstAttribute="top" secondItem="MwH-NS-vk8" secondAttribute="bottom" constant="5" id="4wf-zJ-nOh"/>
                             <constraint firstItem="BRh-LC-bAw" firstAttribute="top" secondItem="YL0-mO-YIP" secondAttribute="bottom" constant="50" id="6IO-Kd-wUE"/>
-                            <constraint firstItem="WJj-y0-IF8" firstAttribute="top" secondItem="XWF-mH-Ywp" secondAttribute="bottom" constant="5" id="CgB-ae-Esu"/>
                             <constraint firstItem="TwG-9Y-48C" firstAttribute="top" secondItem="Som-Br-626" secondAttribute="bottom" id="Dan-A7-yI9"/>
                             <constraint firstItem="c4t-LY-pgp" firstAttribute="leading" secondItem="ase-gr-KKP" secondAttribute="leading" id="GQv-I4-UTD"/>
-                            <constraint firstItem="XWF-mH-Ywp" firstAttribute="top" secondItem="ybd-Y5-U7l" secondAttribute="bottom" constant="5" id="JVu-Dt-xo9"/>
                             <constraint firstItem="c4t-LY-pgp" firstAttribute="top" secondItem="d76-Pj-w5a" secondAttribute="bottom" id="JWQ-s7-nQo"/>
                             <constraint firstItem="ybd-Y5-U7l" firstAttribute="centerX" secondItem="ase-gr-KKP" secondAttribute="centerX" id="KUn-IX-kb9"/>
                             <constraint firstItem="V4b-Zb-KXu" firstAttribute="centerX" secondItem="ase-gr-KKP" secondAttribute="centerX" id="LaJ-pS-haB"/>
@@ -1271,7 +886,6 @@ Name</string>
                             <constraint firstItem="n9J-j3-g4K" firstAttribute="centerY" secondItem="TwG-9Y-48C" secondAttribute="centerY" id="lFC-wC-WfT"/>
                             <constraint firstItem="V4b-Zb-KXu" firstAttribute="top" secondItem="WJj-y0-IF8" secondAttribute="bottom" constant="5" id="nP8-Zf-zAD"/>
                             <constraint firstItem="bcW-nN-vmC" firstAttribute="trailing" secondItem="ase-gr-KKP" secondAttribute="trailingMargin" id="pde-2c-kYY"/>
-                            <constraint firstItem="XWF-mH-Ywp" firstAttribute="centerX" secondItem="ase-gr-KKP" secondAttribute="centerX" id="pwu-AZ-Are"/>
                             <constraint firstItem="8DW-V5-wLP" firstAttribute="centerX" secondItem="ase-gr-KKP" secondAttribute="centerX" id="rA9-7c-enb"/>
                             <constraint firstItem="d76-Pj-w5a" firstAttribute="leading" secondItem="ase-gr-KKP" secondAttribute="leadingMargin" id="uJz-9c-WE3"/>
                             <constraint firstItem="8DW-V5-wLP" firstAttribute="top" secondItem="V4b-Zb-KXu" secondAttribute="bottom" constant="5" id="vT4-HJ-0ND"/>
@@ -1279,7 +893,6 @@ Name</string>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addDoorBtn" destination="XWF-mH-Ywp" id="3A8-fH-f8g"/>
                         <outlet property="administratorBtn" destination="ybd-Y5-U7l" id="qJh-cc-qbr"/>
                         <outlet property="alertsBtn" destination="V4b-Zb-KXu" id="aNg-ts-Caj"/>
                         <outlet property="doorNameBtn" destination="bcW-nN-vmC" id="5TX-Ja-PPk"/>
@@ -1294,7 +907,6 @@ Name</string>
                         <segue destination="dRt-le-6uO" kind="show" identifier="doorListSegue" id="92v-va-upa"/>
                         <segue destination="Km3-5s-c0w" kind="show" identifier="manageVCSegue" id="HbI-ku-sOb"/>
                         <segue destination="AkV-Lz-uR3" kind="show" identifier="manageDoorSegue" id="WZD-hp-RUh"/>
-                        <segue destination="OD6-cr-uRW" kind="show" identifier="doorStatusSegue" id="Mg8-dt-W1d"/>
                         <segue destination="Hq4-fd-FW3" kind="show" identifier="alertListSegue" id="hbK-Hp-idn"/>
                         <segue destination="txZ-qd-yKK" kind="show" identifier="supportSegue" id="SVb-o3-ZLS"/>
                         <segue destination="m1r-H0-oBJ" kind="show" identifier="faqSegue" id="una-WC-lBt"/>
@@ -1303,7 +915,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ep1-a1-tIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2289" y="16"/>
+            <point key="canvasLocation" x="-695.20000000000005" y="15.742128935532236"/>
         </scene>
         <!--Update Email View Controller-->
         <scene sceneID="lQ6-gF-DDt">
@@ -1413,6 +1025,9 @@ Name</string>
                                     <constraint firstAttribute="width" constant="40" id="g7r-rm-Odt"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="fYp-W1-4z0" eventType="touchUpInside" id="lRs-5V-ld4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1461,7 +1076,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5H-jq-EA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1575.2" y="1588.1559220389806"/>
+            <point key="canvasLocation" x="-3639" y="1714"/>
         </scene>
         <!--Update Password View Controller-->
         <scene sceneID="jbC-eb-D06">
@@ -1571,6 +1186,9 @@ Name</string>
                                     <constraint firstAttribute="height" constant="30" id="cV3-Gg-zIs"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="GfO-kW-KDk" eventType="touchUpInside" id="wNc-lv-yCm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1619,7 +1237,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CmC-9Q-Xcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762.39999999999998" y="1586.3568215892055"/>
+            <point key="canvasLocation" x="-2826" y="1712"/>
         </scene>
         <!--Reset Factory View Controller-->
         <scene sceneID="7Vl-fL-Tav">
@@ -1703,6 +1321,9 @@ Name</string>
                                     <constraint firstAttribute="height" constant="30" id="i6o-ND-upw"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="39s-u5-it1" eventType="touchUpInside" id="XXI-Be-aR1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1735,7 +1356,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9W-9a-sQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45.600000000000001" y="1581.8590704647677"/>
+            <point key="canvasLocation" x="-2018" y="1708"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="guG-9q-c53">
@@ -1829,6 +1450,9 @@ Name</string>
                                     <constraint firstAttribute="width" constant="40" id="t6A-nH-4lB"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="h4J-wq-oNi" eventType="touchUpInside" id="kpX-Po-EWu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1866,7 +1490,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5f-rr-0Cu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-556" y="866.71664167916049"/>
+            <point key="canvasLocation" x="-2828" y="899"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Jr3-w1-fDn">
@@ -1934,6 +1558,9 @@ Name</string>
                                     <constraint firstAttribute="height" constant="30" id="mHn-ko-tU2"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="m1r-H0-oBJ" eventType="touchUpInside" id="Sqp-im-1Y4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1967,7 +1594,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eoj-Df-2XA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="186.40000000000001" y="866.71664167916049"/>
+            <point key="canvasLocation" x="-2087" y="899"/>
         </scene>
         <!--Support View Controller-->
         <scene sceneID="nvp-tb-Ubf">
@@ -2028,8 +1655,8 @@ Name</string>
                                     <action selector="callBtn_Click:" destination="txZ-qd-yKK" eventType="touchUpInside" id="3kl-QV-P09"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01268 459 687" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sl5-ee-CqJ">
-                                <rect key="frame" x="116.5" y="271" width="141.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01302315033" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sl5-ee-CqJ">
+                                <rect key="frame" x="123" y="271" width="128.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2063,6 +1690,9 @@ Name</string>
                                     <constraint firstAttribute="height" constant="30" id="v7u-GK-uZ2"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="txZ-qd-yKK" eventType="touchUpInside" id="yr0-Q0-0dM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2099,7 +1729,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0V-2Q-jDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904.79999999999995" y="866.71664167916049"/>
+            <point key="canvasLocation" x="-1367" y="899"/>
         </scene>
         <!--Alert List View Controller-->
         <scene sceneID="C0Z-El-OAw">
@@ -2217,6 +1847,9 @@ Name</string>
                                     <constraint firstAttribute="width" constant="40" id="YTk-l1-xXo"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="Hq4-fd-FW3" eventType="touchUpInside" id="uXA-KV-Mmo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2263,12 +1896,12 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7k-jc-8dR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576.8" y="866.71664167916049"/>
+            <point key="canvasLocation" x="-695" y="899"/>
         </scene>
         <!--Door Status View Controller-->
         <scene sceneID="OX2-LH-pGw">
             <objects>
-                <viewController id="OD6-cr-uRW" customClass="DoorStatusViewController" customModule="Dustan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="doorStatusVC" id="OD6-cr-uRW" customClass="DoorStatusViewController" customModule="Dustan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vfV-xq-N1c"/>
                         <viewControllerLayoutGuide type="bottom" id="qUg-4G-OfH"/>
@@ -2277,6 +1910,18 @@ Name</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Door Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uP-m7-JbY">
+                                <rect key="frame" x="131" y="321" width="111.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Door is Unlocked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZK-dg-mle">
+                                <rect key="frame" x="110" y="350" width="153.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xo-jd-Tuf">
                                 <rect key="frame" x="158" y="20" width="59" height="69"/>
                                 <state key="normal" image="logo"/>
@@ -2332,6 +1977,9 @@ Name</string>
                                     <constraint firstAttribute="width" constant="40" id="NCw-0J-Kuh"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="OD6-cr-uRW" eventType="touchUpInside" id="hwO-nJ-195"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2343,6 +1991,8 @@ Name</string>
                             <constraint firstItem="KHT-3f-0tu" firstAttribute="top" secondItem="6Xo-jd-Tuf" secondAttribute="bottom" id="Ah1-fO-OEo"/>
                             <constraint firstItem="tll-48-DCj" firstAttribute="centerX" secondItem="nNd-ED-nuP" secondAttribute="centerX" id="CZR-sG-fIB"/>
                             <constraint firstItem="oCG-Xh-DlQ" firstAttribute="top" secondItem="QN8-MS-Ell" secondAttribute="bottom" id="DNK-eD-qIq"/>
+                            <constraint firstItem="nZK-dg-mle" firstAttribute="top" secondItem="6uP-m7-JbY" secondAttribute="bottom" constant="5" id="Lkc-8k-HVC"/>
+                            <constraint firstItem="nZK-dg-mle" firstAttribute="centerX" secondItem="nNd-ED-nuP" secondAttribute="centerX" id="Mf9-zf-dBR"/>
                             <constraint firstItem="kJn-qg-6gn" firstAttribute="centerY" secondItem="nNd-ED-nuP" secondAttribute="centerY" id="UfC-iy-aC3"/>
                             <constraint firstItem="6Xo-jd-Tuf" firstAttribute="top" secondItem="vfV-xq-N1c" secondAttribute="bottom" id="ZYF-4a-Xud"/>
                             <constraint firstItem="aQq-ol-m6A" firstAttribute="trailing" secondItem="nNd-ED-nuP" secondAttribute="trailingMargin" id="cGV-b3-aeJ"/>
@@ -2351,120 +2001,23 @@ Name</string>
                             <constraint firstItem="6Xo-jd-Tuf" firstAttribute="centerX" secondItem="nNd-ED-nuP" secondAttribute="centerX" id="paJ-6b-sua"/>
                             <constraint firstItem="qUg-4G-OfH" firstAttribute="top" secondItem="oCG-Xh-DlQ" secondAttribute="bottom" id="q6I-32-3sc"/>
                             <constraint firstItem="oCG-Xh-DlQ" firstAttribute="leading" secondItem="nNd-ED-nuP" secondAttribute="leading" id="sGE-5V-6Rr"/>
+                            <constraint firstItem="6uP-m7-JbY" firstAttribute="centerX" secondItem="nNd-ED-nuP" secondAttribute="centerX" id="tVw-F9-0zK"/>
                             <constraint firstItem="TUC-rQ-z1y" firstAttribute="leading" secondItem="nNd-ED-nuP" secondAttribute="leadingMargin" constant="10" id="tqG-71-CcF"/>
                             <constraint firstItem="tll-48-DCj" firstAttribute="top" secondItem="kJn-qg-6gn" secondAttribute="bottom" constant="10" id="uyg-E5-KQF"/>
                             <constraint firstItem="QN8-MS-Ell" firstAttribute="leading" secondItem="nNd-ED-nuP" secondAttribute="leadingMargin" id="xc3-0W-Erb"/>
+                            <constraint firstItem="6uP-m7-JbY" firstAttribute="centerY" secondItem="nNd-ED-nuP" secondAttribute="centerY" id="zPF-9h-BUJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="doorCommentLabel" destination="nZK-dg-mle" id="5GF-dl-J5s"/>
+                        <outlet property="doorLabel" destination="tll-48-DCj" id="zXm-vW-oB5"/>
                         <outlet property="doorNameBtn" destination="aQq-ol-m6A" id="5n9-L3-SIO"/>
-                        <segue destination="cip-ma-8GX" kind="show" identifier="showDoorStatusSegue" id="awf-mM-Tr4"/>
+                        <outlet property="doorStateLabel" destination="6uP-m7-JbY" id="g6C-Xd-tOA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qHA-c6-jQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2288.8000000000002" y="866.71664167916049"/>
-        </scene>
-        <!--Show Door Status View Controller-->
-        <scene sceneID="Mt4-jV-6nW">
-            <objects>
-                <viewController id="cip-ma-8GX" customClass="ShowDoorStatusViewController" customModule="Dustan" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sKY-Dr-CEw"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cow-zy-v2C"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kaT-Gh-3cK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tma-wH-2Ct">
-                                <rect key="frame" x="158" y="20" width="59" height="69"/>
-                                <state key="normal" image="logo"/>
-                                <connections>
-                                    <action selector="logoBtn_Click:" destination="cip-ma-8GX" eventType="touchUpInside" id="S3u-Rn-nyf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9A-Op-8gF">
-                                <rect key="frame" x="16" y="571" width="31" height="46"/>
-                                <state key="normal" image="lock"/>
-                                <connections>
-                                    <action selector="lockBtn_Click:" destination="cip-ma-8GX" eventType="touchUpInside" id="Z5d-cx-x3m"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underline_title" translatesAutoresizingMaskIntoConstraints="NO" id="cGu-0Z-mqt">
-                                <rect key="frame" x="0.0" y="89" width="375" height="16"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="m1x-DU-kgC">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0c0-Mx-xz3"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Door Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uP-m7-JbY">
-                                <rect key="frame" x="131.5" y="281.5" width="111.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="763-EI-ycw">
-                                <rect key="frame" x="263" y="570" width="96" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="763-EI-ycw" secondAttribute="height" multiplier="2:1" id="jSv-33-lu7"/>
-                                </constraints>
-                                <state key="normal">
-                                    <string key="title">Door
-Name</string>
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doorNameBtn:" destination="cip-ma-8GX" eventType="touchUpInside" id="uBU-Ms-Z1c"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Door is Unlocked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZK-dg-mle">
-                                <rect key="frame" x="110.5" y="325.5" width="153.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S25-hU-8kC">
-                                <rect key="frame" x="26" y="39" width="40" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="WG0-RI-ZZh"/>
-                                    <constraint firstAttribute="width" constant="40" id="hv6-e5-LzD"/>
-                                </constraints>
-                                <state key="normal" image="back"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tma-wH-2Ct" firstAttribute="centerX" secondItem="kaT-Gh-3cK" secondAttribute="centerX" id="0Qi-fZ-1PP"/>
-                            <constraint firstItem="S25-hU-8kC" firstAttribute="leading" secondItem="kaT-Gh-3cK" secondAttribute="leadingMargin" constant="10" id="5VX-e3-oXG"/>
-                            <constraint firstItem="cGu-0Z-mqt" firstAttribute="leading" secondItem="kaT-Gh-3cK" secondAttribute="leading" id="9U6-Rs-ChU"/>
-                            <constraint firstItem="nZK-dg-mle" firstAttribute="top" secondItem="6uP-m7-JbY" secondAttribute="bottom" constant="20" id="9sZ-rr-0s5"/>
-                            <constraint firstAttribute="trailing" secondItem="cGu-0Z-mqt" secondAttribute="trailing" id="JhZ-CC-A8c"/>
-                            <constraint firstItem="m1x-DU-kgC" firstAttribute="leading" secondItem="kaT-Gh-3cK" secondAttribute="leading" id="LM3-fx-Cwh"/>
-                            <constraint firstItem="nZK-dg-mle" firstAttribute="centerX" secondItem="kaT-Gh-3cK" secondAttribute="centerX" id="Q7B-S9-CYg"/>
-                            <constraint firstItem="cGu-0Z-mqt" firstAttribute="top" secondItem="tma-wH-2Ct" secondAttribute="bottom" id="Rmv-6Y-FHl"/>
-                            <constraint firstItem="6uP-m7-JbY" firstAttribute="centerX" secondItem="kaT-Gh-3cK" secondAttribute="centerX" id="aoY-fF-cfi"/>
-                            <constraint firstItem="S25-hU-8kC" firstAttribute="centerY" secondItem="tma-wH-2Ct" secondAttribute="centerY" id="b37-pV-e83"/>
-                            <constraint firstItem="m1x-DU-kgC" firstAttribute="top" secondItem="U9A-Op-8gF" secondAttribute="bottom" id="b8C-wW-o8v"/>
-                            <constraint firstAttribute="trailing" secondItem="m1x-DU-kgC" secondAttribute="trailing" id="fnQ-yL-sRQ"/>
-                            <constraint firstItem="6uP-m7-JbY" firstAttribute="centerY" secondItem="kaT-Gh-3cK" secondAttribute="centerY" constant="-40" id="ltn-V6-0n0"/>
-                            <constraint firstItem="763-EI-ycw" firstAttribute="trailing" secondItem="kaT-Gh-3cK" secondAttribute="trailingMargin" id="oTr-0u-oD0"/>
-                            <constraint firstItem="763-EI-ycw" firstAttribute="centerY" secondItem="U9A-Op-8gF" secondAttribute="centerY" id="sws-VD-eGm"/>
-                            <constraint firstItem="tma-wH-2Ct" firstAttribute="top" secondItem="sKY-Dr-CEw" secondAttribute="bottom" id="uVi-Ha-2eC"/>
-                            <constraint firstItem="U9A-Op-8gF" firstAttribute="leading" secondItem="kaT-Gh-3cK" secondAttribute="leadingMargin" id="uZJ-mY-jsh"/>
-                            <constraint firstItem="Cow-zy-v2C" firstAttribute="top" secondItem="m1x-DU-kgC" secondAttribute="bottom" id="zd2-KY-WAz"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="doorNameBtn" destination="763-EI-ycw" id="Bmc-oj-uSl"/>
-                        <outlet property="doorStatusLabel" destination="nZK-dg-mle" id="cF0-rp-cRF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B3J-AH-Xzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2296.8000000000002" y="1581.8590704647677"/>
+            <point key="canvasLocation" x="1471" y="897"/>
         </scene>
         <!--Manage View Controller-->
         <scene sceneID="gaW-qa-tma">
@@ -2542,6 +2095,9 @@ Name</string>
                                     <constraint firstAttribute="height" constant="30" id="Vvv-fh-LnX"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="Km3-5s-c0w" eventType="touchUpInside" id="j7A-pI-Jpa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2576,7 +2132,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eag-ta-WIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3478" y="-599"/>
+            <point key="canvasLocation" x="689" y="-519"/>
         </scene>
         <!--BlockGSM View Controller-->
         <scene sceneID="3Ra-N6-sg0">
@@ -2663,6 +2219,9 @@ Name</string>
                                     <constraint firstAttribute="width" constant="40" id="zep-6Y-9F5"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="sZV-sn-kfH" eventType="touchUpInside" id="nvT-lj-8yj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2699,7 +2258,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02j-Mi-b7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4193" y="-932"/>
+            <point key="canvasLocation" x="1404" y="-851"/>
         </scene>
         <!--Manage Door View Controller-->
         <scene sceneID="Olq-8G-tBQ">
@@ -2756,11 +2315,11 @@ Name</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EPd-Yu-G0S">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EPd-Yu-G0S">
                                 <rect key="frame" x="20" y="214" width="335" height="255"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="doorCell" textLabel="gdn-K6-GU1" style="IBUITableViewCellStyleDefault" id="p51-bv-hgP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="doorCell" textLabel="gdn-K6-GU1" style="IBUITableViewCellStyleDefault" id="p51-bv-hgP">
                                         <rect key="frame" x="0.0" y="28" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p51-bv-hgP" id="KLh-S2-ccd">
@@ -2810,6 +2369,9 @@ Name</string>
                                     <constraint firstAttribute="height" constant="30" id="ywO-3h-X4C"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="AkV-Lz-uR3" eventType="touchUpInside" id="5TW-Rk-ZCr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2849,7 +2411,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Le0-HT-u6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3468" y="682.3088455772114"/>
+            <point key="canvasLocation" x="46" y="898"/>
         </scene>
         <!--Delete Door View Controller-->
         <scene sceneID="x93-bE-f1T">
@@ -2906,15 +2468,15 @@ Name</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gkq-4O-hIj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gkq-4O-hIj">
                                 <rect key="frame" x="0.0" y="219" width="375" height="248"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="deleteDoorCell" id="VgR-AX-cbG" customClass="DeleteDoorTableViewCell" customModule="Dustan" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="deleteDoorCell" id="VgR-AX-cbG" customClass="DeleteDoorTableViewCell" customModule="Dustan" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VgR-AX-cbG" id="P7F-H8-abs">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Front Door" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iL1-rU-o13">
@@ -2923,27 +2485,14 @@ Name</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8I-Ks-1Rp">
-                                                    <rect key="frame" x="280" y="3" width="75" height="38"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="0CN-Jo-U7d"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                    <state key="normal" title="Select">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="iL1-rU-o13" firstAttribute="centerY" secondItem="P7F-H8-abs" secondAttribute="centerY" id="JFc-ht-YJs"/>
                                                 <constraint firstItem="iL1-rU-o13" firstAttribute="leading" secondItem="P7F-H8-abs" secondAttribute="leadingMargin" constant="20" id="mOO-WM-uUY"/>
-                                                <constraint firstItem="u8I-Ks-1Rp" firstAttribute="centerY" secondItem="P7F-H8-abs" secondAttribute="centerY" id="nds-0T-u1J"/>
-                                                <constraint firstAttribute="trailing" secondItem="u8I-Ks-1Rp" secondAttribute="trailing" constant="20" id="xes-Pc-jIQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="doorNameLabel" destination="iL1-rU-o13" id="PvX-88-0KX"/>
-                                            <outlet property="selectBtn" destination="u8I-Ks-1Rp" id="m7Z-jY-Xbj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2969,6 +2518,9 @@ Name</string>
                                     <constraint firstAttribute="height" constant="30" id="ymH-Ym-gxb"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="7cR-Um-xdK" eventType="touchUpInside" id="qF6-Sq-20o"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3004,7 +2556,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2X8-aC-aLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4205.6000000000004" y="682.3088455772114"/>
+            <point key="canvasLocation" x="781.60000000000002" y="897.30134932533736"/>
         </scene>
         <!--User List View Controller-->
         <scene sceneID="eyQ-p2-0Vw">
@@ -3146,6 +2698,9 @@ Name</string>
                                     <constraint firstAttribute="width" constant="40" id="kkH-sy-t7E"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="Lkc-Jd-AT4" eventType="touchUpInside" id="AQa-Qv-VE9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3185,7 +2740,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDM-MY-Fmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4193" y="-255"/>
+            <point key="canvasLocation" x="1404" y="-174"/>
         </scene>
         <!--Delete User View Controller-->
         <scene sceneID="f7y-zW-HhZ">
@@ -3288,6 +2843,9 @@ Name</string>
                                     <constraint firstAttribute="height" constant="30" id="Eih-Id-Cpe"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="vdK-0Z-M9i" eventType="touchUpInside" id="dhp-Of-ay9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3323,7 +2881,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFF-dD-FQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4889" y="72"/>
+            <point key="canvasLocation" x="2100" y="152"/>
         </scene>
         <!--Add New User View Controller-->
         <scene sceneID="qfl-5a-zc9">
@@ -3412,6 +2970,9 @@ Name</string>
                                     <constraint firstAttribute="width" constant="40" id="tVE-ac-n5j"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="v6P-2c-8Ae" eventType="touchUpInside" id="Csf-1j-Rhg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3451,7 +3012,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mCp-Ac-eFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4889" y="-599"/>
+            <point key="canvasLocation" x="2100" y="-519"/>
         </scene>
         <!--Door List View Controller-->
         <scene sceneID="Uys-TI-8h0">
@@ -3577,6 +3138,9 @@ Name</string>
                                     <constraint firstAttribute="width" constant="40" id="Nru-3O-xLe"/>
                                 </constraints>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backBtn_Click:" destination="dRt-le-6uO" eventType="touchUpInside" id="gx9-Gv-Li3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3612,7 +3176,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SmH-iJ-OE2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3478" y="-1281"/>
+            <point key="canvasLocation" x="689" y="-1200"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0ho-li-oh0">
@@ -3644,10 +3208,9 @@ Name</string>
         <image name="phone" width="34" height="59"/>
         <image name="settings" width="105" height="105"/>
         <image name="underline_title" width="375" height="16"/>
-        <image name="unlock" width="109" height="101"/>
         <image name="wireless" width="114" height="103"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="toh-ha-Byp"/>
+        <segue reference="hzS-Rh-EGj"/>
     </inferredMetricsTieBreakers>
 </document>

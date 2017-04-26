@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DoorListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -23,8 +24,45 @@ class DoorListViewController: UIViewController, UITableViewDelegate, UITableView
         doorNameBtn.layer.borderWidth = 2
         doorNameBtn.layer.borderColor = UIColor.black.cgColor
         doorNameBtn.titleLabel?.textAlignment = NSTextAlignment.center
-        doorList = ["Front Door", "Back Door", "Rental 1"]
-        // Do any additional setup after loading the view.
+        
+        getDoors()
+    }
+    
+    func processData(data: [NSDictionary]) {
+        Constants.doors.removeAll()
+        for item in data {
+            var door: Door = Door()
+            door.id = String(item["id"] as! Int)
+            door.number = item["number"] as! String
+            door.code = item["code"] as! String
+            door.state = item["status"] as! String
+            door.name = item["name"] as! String
+            Constants.doors.append(door)
+        }
+        
+        doorListTableView.reloadData()
+    }
+    
+    func getDoors() {
+        SVProgressHUD.show()
+        DustanService.sharedInstance.getDoors(token: Constants.token, onSuccess: { (response) in
+            debugPrint(response)
+            SVProgressHUD.dismiss()
+            if let result = response.result.value as? NSDictionary{
+                if let status = result["status"] as? Bool {
+                    if status == true {
+                        if let doors = result["data"] as? [NSDictionary] {
+                            self.processData(data: doors)
+                        }
+                    } else {
+                        return
+                    }
+                }
+            }
+        }) { (error) in
+            SVProgressHUD.dismiss()
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,14 +71,21 @@ class DoorListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return doorList.count
+        return Constants.doors.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "doorCell") as! DoorTableViewCell
         cell.noLabel.text = String(indexPath.row + 1)
-        cell.doorNameLabel.text = doorList[indexPath.row]
+        cell.doorNameLabel.text = Constants.doors[indexPath.row].name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let panelVC = storyBoard.instantiateViewController(withIdentifier: "panelVC") as! PanelViewController
+        panelVC.door = Constants.doors[indexPath.row]
+        self.navigationController?.pushViewController(panelVC, animated:true)
     }
 
     @IBAction func logoBtn_Click(_ sender: Any) {
@@ -48,5 +93,8 @@ class DoorListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func lockBtn_Click(_ sender: Any) {
     }
     @IBAction func doorNameBtn_Click(_ sender: Any) {
+    }
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }

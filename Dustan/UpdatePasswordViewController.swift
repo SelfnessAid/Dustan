@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class UpdatePasswordViewController: UIViewController {
 
@@ -52,6 +53,45 @@ class UpdatePasswordViewController: UIViewController {
     }
     @IBAction func doorNameBtn_Click(_ sender: Any) {
     }
+    
+    func showAlert(message:String) {
+        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func saveBtn_Click(_ sender: Any) {
+        if newPasswordTextField.text != confirmTextField.text {
+            showAlert(message: "The passwords do not match")
+            return
+        }
+        
+        SVProgressHUD.show()
+        DustanService.sharedInstance.updatePassword(token: Constants.token, old_password: self.oldPasswordTextField.text!, new_password: self.newPasswordTextField.text!, onSuccess: { (response) in
+            debugPrint(response)
+            SVProgressHUD.dismiss()
+            if let result = response.result.value as? NSDictionary{
+                if let status = result["status"] as? Bool {
+                    if status == true {
+                        if (result["data"] as? String) != nil {
+                            self.showAlert(message: "Password is updated successfully")
+                        }
+                    } else {
+                        if let message = result["data"] as? String {
+                            self.showAlert(message: message)
+                            return
+                        }
+                    }
+                }
+            }
+        }, onFailure: { (error) in
+            debugPrint(error)
+            SVProgressHUD.dismiss()
+            self.showAlert(message: error.localizedDescription)
+        })
+        
+    }
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }

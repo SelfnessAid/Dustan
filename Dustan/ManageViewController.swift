@@ -39,4 +39,7 @@ class ManageViewController: UIViewController {
     @IBAction func newUserBtn_Click(_ sender: Any) {
         performSegue(withIdentifier: "userListSegue", sender: nil)
     }
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 }

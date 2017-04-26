@@ -57,12 +57,8 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "manageVCSegue", sender: nil)
     }
     
-    @IBAction func addDoorBtn_Click(_ sender: Any) {
-        performSegue(withIdentifier: "manageDoorSegue", sender: nil)
-    }
-    
     @IBAction func doorStatusBtn_Click(_ sender: Any) {
-        performSegue(withIdentifier: "doorStatusSegue", sender: nil)
+        performSegue(withIdentifier: "manageDoorSegue", sender: nil)
     }
     
     @IBAction func alertBtn_Click(_ sender: Any) {
@@ -84,5 +80,9 @@ class HomeViewController: UIViewController {
     @IBAction func settingBtn_Click(_ sender: Any) {
         performSegue(withIdentifier: "settingsSegue", sender: nil)
         
+    }
+    
+    @IBAction func backBtn_Click(_ sender: Any) {
+        self.navigationController!.popViewController(animated: true)
     }
 }

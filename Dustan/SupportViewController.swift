@@ -34,4 +34,7 @@ class SupportViewController: UIViewController {
     }
     @IBAction func emailBtn_Click(_ sender: Any) {
     }
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 }

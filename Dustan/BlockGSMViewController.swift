@@ -34,7 +34,34 @@ class BlockGSMViewController: UIViewController {
     @IBAction func doorNameBtn_Click(_ sender: Any) {
     }
     @IBAction func yesBtn_Click(_ sender: Any) {
+        showAlert(message: "GSM is blocked successfully", flag: true)
     }
     @IBAction func noBtn_Click(_ sender: Any) {
+        showAlert(message: "GSM is activated successfully", flag: false)
+    }
+    
+    func showAlert(message: String, flag: Bool) {
+        let alert = UIAlertController(title: "Notice", message: message, preferredStyle: .alert)
+        let okAct = UIAlertAction(title: "OK", style: .default) { (act) in
+            if flag == true {
+                UserDefaults.standard.set(false, forKey: "GSM")
+                UserDefaults.standard.synchronize()
+            } else {
+                UserDefaults.standard.set(true, forKey: "GSM")
+                UserDefaults.standard.synchronize()
+            }
+        }
+        
+        let cancelAct = UIAlertAction(title: "Cancel", style: .default) { (act) in
+            
+        }
+        
+        alert.addAction(okAct)
+        alert.addAction(cancelAct)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
 }

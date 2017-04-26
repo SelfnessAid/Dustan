@@ -41,4 +41,7 @@ class SettingsViewController: UIViewController {
     @IBAction func factoryResetBtn_Click(_ sender: Any) {
         performSegue(withIdentifier: "resetFactorySegue", sender: nil)
     }
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 }

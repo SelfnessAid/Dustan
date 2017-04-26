@@ -30,4 +30,7 @@ class AlertListViewController: UIViewController {
     }
     @IBAction func doorNameBtn_Click(_ sender: Any) {
     }
+    @IBAction func backBtn_Click(_ sender: Any) {
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 }
