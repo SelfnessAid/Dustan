@@ -119,7 +119,13 @@ class AddNewDoorViewController: UIViewController {
                         if let token = result["data"] as? NSDictionary {
                             if let tokenStr = token["token"] as? String {
                                 Constants.token = tokenStr
-                                self.performSegue(withIdentifier: "securityQestionsSegue", sender: self)
+                                if UserDefaults.standard.bool(forKey: "loggedIn") == false {
+                                    self.performSegue(withIdentifier: "securityQestionsSegue", sender: self)
+                                } else {
+                                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                                    let homeVC = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+                                    self.navigationController?.pushViewController(homeVC, animated:true)
+                                }
                             }
                             
                         }

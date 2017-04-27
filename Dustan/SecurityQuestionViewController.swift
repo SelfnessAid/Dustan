@@ -67,9 +67,9 @@ class SecurityQuestionViewController: UIViewController {
         question3Btn.layer.cornerRadius = 5
         question3Btn.titleEdgeInsets = UIEdgeInsetsMake(0.0, 20.0, 0.0, 20.0)
         
-        first_drop.anchorView = question1Btn.plainView
-        second_drop.anchorView = question2Btn.plainView
-        third_drop.anchorView = question3Btn.plainView
+        first_drop.anchorView = question1Btn
+        second_drop.anchorView = question2Btn
+        third_drop.anchorView = question3Btn
     }
     
     func processData(data: [NSDictionary]) {
@@ -200,6 +200,8 @@ class SecurityQuestionViewController: UIViewController {
             if let result = response.result.value as? NSDictionary{
                 if let status = result["status"] as? Bool {
                     if status == true {
+                        UserDefaults.standard.set(true, forKey: "loggedIn")
+                        UserDefaults.standard.synchronize()
                         self.performSegue(withIdentifier: "mainSegue", sender: nil)
                     } else {
                         if let message = result["data"] as? String {

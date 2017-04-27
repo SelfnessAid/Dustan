@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class UserListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -22,8 +23,47 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
         doorNameBtn.layer.borderWidth = 2
         doorNameBtn.layer.borderColor = UIColor.black.cgColor
         doorNameBtn.titleLabel?.textAlignment = NSTextAlignment.center
-        userList = ["David", "David", "David"]
-        phoneList = ["07835 781104", "07835 781104", "07835 781104"]
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getUsers()
+    }
+    
+    func processData(data: [NSDictionary]) {
+        Constants.users.removeAll()
+        for item in data {
+            var user: User = User()
+            user.id = String(item["id"] as! Int)
+            user.first_name = item["first_name"] as! String
+            user.last_name = item["last_name"] as! String
+            user.phone_number = item["phone_number"] as! String
+            Constants.users.append(user)
+        }
+        
+        userTableView.reloadData()
+    }
+    
+    func getUsers() {
+        SVProgressHUD.show()
+        DustanService.sharedInstance.getUsers(token: Constants.token, onSuccess: { (response) in
+            debugPrint(response)
+            SVProgressHUD.dismiss()
+            if let result = response.result.value as? NSDictionary{
+                if let status = result["status"] as? Bool {
+                    if status == true {
+                        if let users = result["data"] as? [NSDictionary] {
+                            self.processData(data: users)
+                        }
+                    } else {
+                        return
+                    }
+                }
+            }
+        }) { (error) in
+            SVProgressHUD.dismiss()
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,14 +72,14 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userList.count
+        return Constants.users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell") as! UserTableViewCell
         cell.noLabel.text = String(indexPath.row + 1)
-        cell.nameLabel.text = userList[indexPath.row]
-        cell.phoneLabel.text = phoneList[indexPath.row]
+        cell.nameLabel.text = Constants.users[indexPath.row].first_name + " " + Constants.users[indexPath.row].last_name
+        cell.phoneLabel.text = Constants.users[indexPath.row].phone_number
         return cell
     }
 

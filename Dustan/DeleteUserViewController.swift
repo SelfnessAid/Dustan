@@ -21,19 +21,16 @@ class DeleteUserViewController: UIViewController, UITableViewDelegate, UITableVi
         doorNameBtn.layer.borderColor = UIColor.black.cgColor
         doorNameBtn.titleLabel?.textAlignment = NSTextAlignment.center
         
-        userTableView.allowsMultipleSelection = true
-        
-        users = ["User1", "User2", "User3", "User4"]
-        
+        userTableView.allowsMultipleSelection = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return Constants.users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "deleteUserCell")! as UITableViewCell
-        cell.textLabel?.text = "\(indexPath.row + 1)  " + users[indexPath.row]
+        cell.textLabel?.text = "\(indexPath.row + 1)  " + Constants.users[indexPath.row].first_name + Constants.users[indexPath.row].last_name
         cell.accessoryType = cell.isSelected ? .checkmark: .none
         cell.selectionStyle = .none
         return cell
@@ -64,8 +61,40 @@ class DeleteUserViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
     
+    func showAlert(title: String, message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func deleteBtn_Click(_ sender: Any) {
-        
+        let alertVC = UIAlertController(title: "Enter the keypad code", message: "", preferredStyle: .alert)
+        let OKAct = UIAlertAction(title: "OK", style: .default) { (act) in
+            let textField = (alertVC.textFields?[0])! as UITextField
+            DustanService.sharedInstance.deleteUser(token: Constants.token, code: textField.text!, phone: Constants.users[(self.userTableView.indexPathForSelectedRow?.row)!].phone_number, onSuccess: { (response) in
+                if let result = response.result.value as? NSDictionary{
+                    if let status = result["status"] as? Bool {
+                        if status == true {
+                            self.showAlert(title: "Success", message: "deleted User successfully")
+                        } else {
+                            if let message = result["data"] as? String {
+                                self.showAlert(title: "Error", message: message)
+                                return
+                            }
+                        }
+                    }
+                }
+            }, onFailure: { (error) in
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            })
+        }
+        let CancelAct = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alertVC.addTextField { (textField) in
+            
+        }
+        alertVC.addAction(OKAct)
+        alertVC.addAction(CancelAct)
+        self.present(alertVC, animated: true, completion: nil)
     }
     
     @IBAction func backBtn_Click(_ sender: Any) {

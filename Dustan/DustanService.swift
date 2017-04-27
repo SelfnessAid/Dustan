@@ -32,6 +32,21 @@ class DustanService {
         }
     }
     
+    func signInUser(phone: String, password: String, onSuccess:@escaping (_ result: DataResponse<Any>) -> Void, onFailure:@escaping (_ error: Error) -> Void) -> Void {
+        let parameters: Parameters = [
+            "phone_number": phone,
+            "password": password
+        ]
+        self.sessionManager.request(Constants.DustanCareAPI.SINGIN, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success:
+                onSuccess(response)
+            case .failure(let error):
+                onFailure(error)
+            }
+        }
+    }
+    
     func getQuestions(onSuccess:@escaping (_ result: DataResponse<Any>) -> Void, onFailure:@escaping (_ error: Error) -> Void) -> Void {
         let url: String = String(format: Constants.DustanCareAPI.GETQUESTIONS)
         self.sessionManager.request(url).responseJSON { response in
@@ -52,6 +67,55 @@ class DustanService {
         print(parameters)
         self.sessionManager.request(Constants.DustanCareAPI.SAVEANSWER, method: .post, parameters: parameters, encoding: URLEncoding.default)
             .responseJSON { response in
+            switch response.result {
+            case .success:
+                onSuccess(response)
+            case .failure(let error):
+                onFailure(error)
+            }
+        }
+    }
+    
+    func getUsers(token:String, onSuccess:@escaping (_ result: DataResponse<Any>) -> Void, onFailure:@escaping (_ error: Error) -> Void) -> Void {
+        let parameters: Parameters = [
+            "token": token
+        ]
+        self.sessionManager.request(Constants.DustanCareAPI.GETUSERS, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success:
+                onSuccess(response)
+            case .failure(let error):
+                onFailure(error)
+            }
+        }
+    }
+    
+    func inviteUser(token:String, first: String, last: String, code: String, phone: String, email: String, onSuccess:@escaping (_ result: DataResponse<Any>) -> Void, onFailure:@escaping (_ error: Error) -> Void) -> Void {
+        let parameters: Parameters = [
+            "token": token,
+            "keypad_code": code,
+            "phone_number": phone,
+            "first_name": first,
+            "last_name": last,
+            "email": email
+        ]
+        self.sessionManager.request(Constants.DustanCareAPI.INVITEUSER, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
+            switch response.result {
+            case .success:
+                onSuccess(response)
+            case .failure(let error):
+                onFailure(error)
+            }
+        }
+    }
+    
+    func deleteUser(token:String, code: String, phone: String, onSuccess:@escaping (_ result: DataResponse<Any>) -> Void, onFailure:@escaping (_ error: Error) -> Void) -> Void {
+        let parameters: Parameters = [
+            "token": token,
+            "keypad_code": code,
+            "phone_number": phone
+        ]
+        self.sessionManager.request(Constants.DustanCareAPI.DELETEUSER, method: .post, parameters: parameters, encoding: URLEncoding.default).responseJSON { response in
             switch response.result {
             case .success:
                 onSuccess(response)
