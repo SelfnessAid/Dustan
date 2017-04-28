@@ -76,12 +76,17 @@ class UpdateEmailViewController: UIViewController {
     
     @IBAction func saveBtn_Click(_ sender: Any) {
         if isValidEmail(testStr: oldEmailTextField.text!) == false || isValidEmail(testStr: newEmailTextField.text!) == false {
-            showAlert(message: "")
+            showAlert(message: "Please input the correct format of email")
             return
         }
         
         if newEmailTextField.text != confirmTextField.text {
-            showAlert(message: "")
+            showAlert(message: "Please check your confirm email address is correct")
+            return
+        }
+        
+        if UserDefaults.standard.bool(forKey: "GSM") == true {
+            showAlert(message: "GSM is blocked now. Please enable it on Administrator")
             return
         }
         

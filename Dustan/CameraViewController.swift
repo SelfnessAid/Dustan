@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class CameraViewController: UIViewController {
     
@@ -21,9 +22,11 @@ class CameraViewController: UIViewController {
     }
     
     func loadImage() {
+        SVProgressHUD.show()
         let imageURL = URL(string: "http://52.56.190.147/" + url)!
         let session = URLSession(configuration: .default)
         let downloadTask = session.dataTask(with: imageURL) { (data, response, error) in
+            SVProgressHUD.dismiss()
             if (response as? HTTPURLResponse) != nil {
                 if let imageData = data {
                     let image = UIImage(data: imageData)

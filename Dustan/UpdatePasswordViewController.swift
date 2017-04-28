@@ -66,6 +66,11 @@ class UpdatePasswordViewController: UIViewController {
             return
         }
         
+        if UserDefaults.standard.bool(forKey: "GSM") == true {
+            showAlert(message: "GSM is blocked now. Please enable it on Administrator")
+            return
+        }
+        
         SVProgressHUD.show()
         DustanService.sharedInstance.updatePassword(token: Constants.token, old_password: self.oldPasswordTextField.text!, new_password: self.newPasswordTextField.text!, onSuccess: { (response) in
             debugPrint(response)

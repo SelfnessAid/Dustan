@@ -27,11 +27,20 @@ class SecurityQuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initUI()
+        
         getQuestions()
     }
     
+    override func viewDidLayoutSubviews() {
+        initUI()
+    }
+    
     func initUI() {
+        doorNameBtn.layoutIfNeeded()
+        question1Btn.layoutIfNeeded()
+        question2Btn.layoutIfNeeded()
+        question3Btn.layoutIfNeeded()
+        
         doorNameBtn.layer.cornerRadius = 5
         doorNameBtn.layer.borderWidth = 2
         doorNameBtn.layer.borderColor = UIColor.black.cgColor
@@ -70,6 +79,9 @@ class SecurityQuestionViewController: UIViewController {
         first_drop.anchorView = question1Btn
         second_drop.anchorView = question2Btn
         third_drop.anchorView = question3Btn
+        first_drop.width = question1Btn.frame.width
+        second_drop.width = question1Btn.frame.width
+        third_drop.width = question1Btn.frame.width
     }
     
     func processData(data: [NSDictionary]) {

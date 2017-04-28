@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class AddNewUserViewController: UIViewController {
 
@@ -67,10 +68,18 @@ class AddNewUserViewController: UIViewController {
             showAlert(message: "Please enter correct email")
             return
         }
+        
+        if UserDefaults.standard.bool(forKey: "GSM") == true {
+            showAlert(message: "GSM is blocked now. Please enable it on Administrator")
+            return
+        }
+        
         let alertVC = UIAlertController(title: "Enter the keypad code", message: "", preferredStyle: .alert)
         let OKAct = UIAlertAction(title: "OK", style: .default) { (act) in
             let textField = (alertVC.textFields?[0])! as UITextField
+            SVProgressHUD.show()
             DustanService.sharedInstance.inviteUser(token: Constants.token, first: self.firstNameTextField.text!, last: self.lastNameTextField.text!, code: textField.text!, phone: self.phoneTextField.text!, email: self.emailTextField.text!, onSuccess: { (response) in
+                SVProgressHUD.dismiss()
                 if let result = response.result.value as? NSDictionary{
                     if let status = result["status"] as? Bool {
                         if status == true {
@@ -84,6 +93,7 @@ class AddNewUserViewController: UIViewController {
                     }
                 }
             }, onFailure: { (error) in
+                SVProgressHUD.dismiss()
                 self.showAlert(message: error.localizedDescription)
             })
         }

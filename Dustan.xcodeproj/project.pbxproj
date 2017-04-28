@@ -19,9 +19,7 @@
 		4B58D3CA1E837936000D155B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3AF1E837936000D155B /* LoginViewController.swift */; };
 		4B58D3CB1E837936000D155B /* FirstSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B01E837936000D155B /* FirstSetupViewController.swift */; };
 		4B58D3CC1E837936000D155B /* AddNewDoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B11E837936000D155B /* AddNewDoorViewController.swift */; };
-		4B58D3CD1E837936000D155B /* AdminstratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B21E837936000D155B /* AdminstratorViewController.swift */; };
 		4B58D3CE1E837936000D155B /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B31E837936000D155B /* PanelViewController.swift */; };
-		4B58D3CF1E837936000D155B /* UnLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B41E837936000D155B /* UnLockViewController.swift */; };
 		4B58D3D01E837936000D155B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B51E837936000D155B /* HomeViewController.swift */; };
 		4B58D3D11E837936000D155B /* DoorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B61E837936000D155B /* DoorListViewController.swift */; };
 		4B58D3D21E837936000D155B /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3B71E837936000D155B /* ManageViewController.swift */; };
@@ -32,7 +30,6 @@
 		4B58D3D71E837936000D155B /* ManageDoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3BC1E837936000D155B /* ManageDoorViewController.swift */; };
 		4B58D3D81E837936000D155B /* DeleteDoorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3BD1E837936000D155B /* DeleteDoorViewController.swift */; };
 		4B58D3D91E837936000D155B /* DoorStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3BE1E837936000D155B /* DoorStatusViewController.swift */; };
-		4B58D3DA1E837936000D155B /* ShowDoorStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3BF1E837936000D155B /* ShowDoorStatusViewController.swift */; };
 		4B58D3DB1E837936000D155B /* AlertListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C01E837936000D155B /* AlertListViewController.swift */; };
 		4B58D3DC1E837936000D155B /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C11E837936000D155B /* SupportViewController.swift */; };
 		4B58D3DD1E837936000D155B /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C21E837936000D155B /* FAQViewController.swift */; };
@@ -41,8 +38,6 @@
 		4B58D3E01E837936000D155B /* ResetFactoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C51E837936000D155B /* ResetFactoryViewController.swift */; };
 		4B58D3E11E837936000D155B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C61E837936000D155B /* SettingsViewController.swift */; };
 		4B58D3E21E837936000D155B /* SecurityQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C71E837936000D155B /* SecurityQuestionViewController.swift */; };
-		4B58D3E31E837936000D155B /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C81E837936000D155B /* SelectUserViewController.swift */; };
-		4B58D3E41E837936000D155B /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58D3C91E837936000D155B /* PasswordViewController.swift */; };
 		4B629EEE1EA7037D00E8C0B4 /* AppDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B629EED1EA7037D00E8C0B4 /* AppDatas.swift */; };
 		4BBCCE671EA69048009755E4 /* DustanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCCE661EA69048009755E4 /* DustanService.swift */; };
 		4BBCCE691EA6A288009755E4 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCCE681EA6A288009755E4 /* Contants.swift */; };
@@ -63,9 +58,7 @@
 		4B58D3AF1E837936000D155B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4B58D3B01E837936000D155B /* FirstSetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstSetupViewController.swift; sourceTree = "<group>"; };
 		4B58D3B11E837936000D155B /* AddNewDoorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewDoorViewController.swift; sourceTree = "<group>"; };
-		4B58D3B21E837936000D155B /* AdminstratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminstratorViewController.swift; sourceTree = "<group>"; };
 		4B58D3B31E837936000D155B /* PanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
-		4B58D3B41E837936000D155B /* UnLockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnLockViewController.swift; sourceTree = "<group>"; };
 		4B58D3B51E837936000D155B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4B58D3B61E837936000D155B /* DoorListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorListViewController.swift; sourceTree = "<group>"; };
 		4B58D3B71E837936000D155B /* ManageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +69,6 @@
 		4B58D3BC1E837936000D155B /* ManageDoorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDoorViewController.swift; sourceTree = "<group>"; };
 		4B58D3BD1E837936000D155B /* DeleteDoorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteDoorViewController.swift; sourceTree = "<group>"; };
 		4B58D3BE1E837936000D155B /* DoorStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorStatusViewController.swift; sourceTree = "<group>"; };
-		4B58D3BF1E837936000D155B /* ShowDoorStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDoorStatusViewController.swift; sourceTree = "<group>"; };
 		4B58D3C01E837936000D155B /* AlertListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertListViewController.swift; sourceTree = "<group>"; };
 		4B58D3C11E837936000D155B /* SupportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
 		4B58D3C21E837936000D155B /* FAQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
@@ -85,8 +77,6 @@
 		4B58D3C51E837936000D155B /* ResetFactoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetFactoryViewController.swift; sourceTree = "<group>"; };
 		4B58D3C61E837936000D155B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4B58D3C71E837936000D155B /* SecurityQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityQuestionViewController.swift; sourceTree = "<group>"; };
-		4B58D3C81E837936000D155B /* SelectUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
-		4B58D3C91E837936000D155B /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		4B629EED1EA7037D00E8C0B4 /* AppDatas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDatas.swift; sourceTree = "<group>"; };
 		4BBCCE661EA69048009755E4 /* DustanService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DustanService.swift; sourceTree = "<group>"; };
 		4BBCCE681EA6A288009755E4 /* Contants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
@@ -157,9 +147,7 @@
 				4B58D3AF1E837936000D155B /* LoginViewController.swift */,
 				4B58D3B01E837936000D155B /* FirstSetupViewController.swift */,
 				4B58D3B11E837936000D155B /* AddNewDoorViewController.swift */,
-				4B58D3B21E837936000D155B /* AdminstratorViewController.swift */,
 				4B58D3B31E837936000D155B /* PanelViewController.swift */,
-				4B58D3B41E837936000D155B /* UnLockViewController.swift */,
 				4B58D3B51E837936000D155B /* HomeViewController.swift */,
 				4B58D3B61E837936000D155B /* DoorListViewController.swift */,
 				4B58D3B71E837936000D155B /* ManageViewController.swift */,
@@ -170,7 +158,6 @@
 				4B58D3BC1E837936000D155B /* ManageDoorViewController.swift */,
 				4B58D3BD1E837936000D155B /* DeleteDoorViewController.swift */,
 				4B58D3BE1E837936000D155B /* DoorStatusViewController.swift */,
-				4B58D3BF1E837936000D155B /* ShowDoorStatusViewController.swift */,
 				4B58D3C01E837936000D155B /* AlertListViewController.swift */,
 				4B58D3C11E837936000D155B /* SupportViewController.swift */,
 				4B58D3C21E837936000D155B /* FAQViewController.swift */,
@@ -179,8 +166,6 @@
 				4B58D3C51E837936000D155B /* ResetFactoryViewController.swift */,
 				4B58D3C61E837936000D155B /* SettingsViewController.swift */,
 				4B58D3C71E837936000D155B /* SecurityQuestionViewController.swift */,
-				4B58D3C81E837936000D155B /* SelectUserViewController.swift */,
-				4B58D3C91E837936000D155B /* PasswordViewController.swift */,
 				4B45B7B21EB04EB700DCEB14 /* CameraViewController.swift */,
 				4BE1C3901EB18ED600FA6E30 /* SignInViewController.swift */,
 			);
@@ -342,7 +327,6 @@
 				4B629EEE1EA7037D00E8C0B4 /* AppDatas.swift in Sources */,
 				4B58D3CB1E837936000D155B /* FirstSetupViewController.swift in Sources */,
 				4B58D3DC1E837936000D155B /* SupportViewController.swift in Sources */,
-				4B58D3CF1E837936000D155B /* UnLockViewController.swift in Sources */,
 				4B58D3CE1E837936000D155B /* PanelViewController.swift in Sources */,
 				4B58D3D91E837936000D155B /* DoorStatusViewController.swift in Sources */,
 				4B58D3DE1E837936000D155B /* UpdateEmailViewController.swift in Sources */,
@@ -352,14 +336,11 @@
 				4B45B7B31EB04EB700DCEB14 /* CameraViewController.swift in Sources */,
 				4B58D3DD1E837936000D155B /* FAQViewController.swift in Sources */,
 				4B58D3D11E837936000D155B /* DoorListViewController.swift in Sources */,
-				4B58D3CD1E837936000D155B /* AdminstratorViewController.swift in Sources */,
 				4B58D3D81E837936000D155B /* DeleteDoorViewController.swift in Sources */,
-				4B58D3DA1E837936000D155B /* ShowDoorStatusViewController.swift in Sources */,
 				4B58D3D71E837936000D155B /* ManageDoorViewController.swift in Sources */,
 				4BBCCE671EA69048009755E4 /* DustanService.swift in Sources */,
 				4B58D3DF1E837936000D155B /* UpdatePasswordViewController.swift in Sources */,
 				4B58D3D31E837936000D155B /* BlockGSMViewController.swift in Sources */,
-				4B58D3E41E837936000D155B /* PasswordViewController.swift in Sources */,
 				4BBCCE691EA6A288009755E4 /* Contants.swift in Sources */,
 				4B58D3D51E837936000D155B /* AddNewUserViewController.swift in Sources */,
 				4B58D3D01E837936000D155B /* HomeViewController.swift in Sources */,
@@ -371,7 +352,6 @@
 				4B58D3DB1E837936000D155B /* AlertListViewController.swift in Sources */,
 				4B58D3E01E837936000D155B /* ResetFactoryViewController.swift in Sources */,
 				4BE1C3911EB18ED600FA6E30 /* SignInViewController.swift in Sources */,
-				4B58D3E31E837936000D155B /* SelectUserViewController.swift in Sources */,
 				4B58D3CA1E837936000D155B /* LoginViewController.swift in Sources */,
 				4B58D3AB1E8378FB000D155B /* DoorTableViewCell.swift in Sources */,
 			);
@@ -476,6 +456,7 @@
 			baseConfigurationReference = 5646B9779675784F3D0771BF /* Pods-Dustan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: HeMin Wang (SKV63Z99FA)";
 				DEVELOPMENT_TEAM = YLXVCP6CQB;
 				INFOPLIST_FILE = Dustan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -492,6 +473,7 @@
 			baseConfigurationReference = 71885D02C97E0DDE21E49874 /* Pods-Dustan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: HeMin Wang (SKV63Z99FA)";
 				DEVELOPMENT_TEAM = YLXVCP6CQB;
 				INFOPLIST_FILE = Dustan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

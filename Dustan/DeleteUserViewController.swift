@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class DeleteUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -37,11 +38,11 @@ class DeleteUserViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        } else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,9 +69,15 @@ class DeleteUserViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func deleteBtn_Click(_ sender: Any) {
+        if UserDefaults.standard.bool(forKey: "GSM") == true {
+            showAlert(title: "Error", message: "GSM is blocked now. Please enable it on Administrator")
+            return
+        }
+        
         let alertVC = UIAlertController(title: "Enter the keypad code", message: "", preferredStyle: .alert)
         let OKAct = UIAlertAction(title: "OK", style: .default) { (act) in
             let textField = (alertVC.textFields?[0])! as UITextField
+            
             DustanService.sharedInstance.deleteUser(token: Constants.token, code: textField.text!, phone: Constants.users[(self.userTableView.indexPathForSelectedRow?.row)!].phone_number, onSuccess: { (response) in
                 if let result = response.result.value as? NSDictionary{
                     if let status = result["status"] as? Bool {

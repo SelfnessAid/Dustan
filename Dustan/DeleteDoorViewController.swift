@@ -101,6 +101,12 @@ class DeleteDoorViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func deleteBtn_Click(_ sender: Any) {
+        
+        if UserDefaults.standard.bool(forKey: "GSM") == true {
+            showAlert(message: "GSM is blocked now. Please enable it on Administrator")
+            return
+        }
+        
         if (doorTableView.indexPathsForSelectedRows?.count)! > 0 {
             let keys: [String] = (doorTableView.indexPathsForSelectedRows?.flatMap({ (indexPath) -> String? in
                 return String(indexPath.row)
@@ -129,7 +135,14 @@ class DeleteDoorViewController: UIViewController, UITableViewDelegate, UITableVi
             })
         }
     }
+    
     @IBAction func backBtn_Click(_ sender: Any) {
         _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    func showAlert(message:String) {
+        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

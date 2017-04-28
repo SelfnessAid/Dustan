@@ -107,7 +107,12 @@ class AddNewDoorViewController: UIViewController {
             self.showAlert(message: "Input Valid Email Address!")
             return
         }
-//        self.performSegue(withIdentifier: "securityQestionsSegue", sender: self)
+        
+        if UserDefaults.standard.bool(forKey: "GSM") == true {
+            showAlert(message: "GSM is blocked now. Please enable it on Administrator")
+            return
+        }
+        
         SVProgressHUD.show()
         
         DustanService.sharedInstance.addNewDoor(name: nameStr, phone: phoneStr, code: codeStr, password: passwordStr, email: emailStr, onSuccess: { (response) in
