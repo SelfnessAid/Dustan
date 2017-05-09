@@ -14,6 +14,7 @@ class FirstSetupViewController: UIViewController {
     @IBOutlet weak var firstSetupBtn: UIButton!
     @IBOutlet weak var lockBtn: UIButton!
     @IBOutlet weak var logoBtn: UIButton!
+    @IBOutlet weak var firstSetupLogoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,13 @@ class FirstSetupViewController: UIViewController {
         doorNameBtn.layer.borderWidth = 2
         doorNameBtn.layer.borderColor = UIColor.black.cgColor
         doorNameBtn.titleLabel?.textAlignment = NSTextAlignment.center
-        // Do any additional setup after loading the view.
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(FirstSetupViewController.tapped(_sender:)))
+        firstSetupLogoImageView.isUserInteractionEnabled = true
+        firstSetupLogoImageView.addGestureRecognizer(tapGesture)
+    }
+    
+    func tapped(_sender: AnyObject) {
+        performSegue(withIdentifier: "addNewDoorSegue", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {

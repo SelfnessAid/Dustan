@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        DropDown.startListeningToKeyboard()
         SVProgressHUD.setDefaultStyle(.custom)
         SVProgressHUD.setBackgroundColor(UIColor.clear)
-        SVProgressHUD.setForegroundColor(UIColor.blue)
-        SVProgressHUD.setRingThickness(4)
+        SVProgressHUD.setForegroundColor(UIColor.black)
+        SVProgressHUD.setRingThickness(5)
         
         if UserDefaults.standard.bool(forKey: "loggedIn") == true {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
