@@ -63,38 +63,25 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
         SVProgressHUD.show()
         
         if centerImg.image == #imageLiteral(resourceName: "lock") {
-            let alertVC = UIAlertController(title: "Enter the keypad password", message: "", preferredStyle: .alert)
-            let OKAct = UIAlertAction(title: "OK", style: .default) { (act) in
-                let textField = (alertVC.textFields?[0])! as UITextField
-                
-                DustanService.sharedInstance.doorLock(token: Constants.token, code: self.door.code, password: textField.text!, on: false, onSuccess: { (response) in
-                    SVProgressHUD.dismiss()
-                    if let result = response.result.value as? NSDictionary{
-                        if let status = result["status"] as? Bool {
-                            if status == true {
-                                self.centerImg.image = UIImage(named: "unlock")
-                                self.infoLabel.text = "Unlocked"
-                            } else {
-                                if let message = result["data"] as? String {
-                                    self.showAlert(message: message)
-                                    return
-                                }
+            DustanService.sharedInstance.doorLock(token: Constants.token, code: self.door.code, password: "", on: false, onSuccess: { (response) in
+                SVProgressHUD.dismiss()
+                if let result = response.result.value as? NSDictionary{
+                    if let status = result["status"] as? Bool {
+                        if status == true {
+                            self.centerImg.image = UIImage(named: "unlock")
+                            self.infoLabel.text = "Unlocked"
+                        } else {
+                            if let message = result["data"] as? String {
+                                self.showAlert(message: message)
+                                return
                             }
                         }
                     }
-                }, onFailure: { (error) in
-                    SVProgressHUD.dismiss()
-                    self.showAlert(message: error.localizedDescription)
-                })
-            }
-            let CancelAct = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-            alertVC.addTextField { (textField) in
-                
-            }
-            alertVC.addAction(OKAct)
-            alertVC.addAction(CancelAct)
-            self.present(alertVC, animated: true, completion: nil)
-
+                }
+            }, onFailure: { (error) in
+                SVProgressHUD.dismiss()
+                self.showAlert(message: error.localizedDescription)
+            })
         }
     }
     
@@ -104,103 +91,92 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
             return
         }
         
-        let alertVC = UIAlertController(title: "Enter the keypad password", message: "", preferredStyle: .alert)
-        let OKAct = UIAlertAction(title: "OK", style: .default) { (act) in
-            let textField = (alertVC.textFields?[0])! as UITextField
-            let tappedImage = self.centerImg.image
-            SVProgressHUD.show()
-            if tappedImage == #imageLiteral(resourceName: "camera") {
-                DustanService.sharedInstance.doorCamera(token: Constants.token, code: self.door.code, password: textField.text!, on: true, onSuccess: { (response) in
-                    SVProgressHUD.dismiss()
-                    if let result = response.result.value as? NSDictionary{
-                        if let status = result["status"] as? Bool {
-                            if status == true {
-                                if let data = result["data"] as? NSDictionary {
-                                    
-                                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                                    let cameraVC = storyBoard.instantiateViewController(withIdentifier: "cameraVC") as! CameraViewController
-                                    cameraVC.url = (data["door_img"] as? String)!
-                                    self.navigationController?.pushViewController(cameraVC, animated:true)
-                                }
-                            } else {
-                                if let message = result["data"] as? String {
-                                    self.showAlert(message: message)
-                                    return
-                                }
+        let tappedImage = self.centerImg.image
+        SVProgressHUD.show()
+        if tappedImage == #imageLiteral(resourceName: "camera") {
+            DustanService.sharedInstance.doorCamera(token: Constants.token, code: self.door.code, password: "", on: true, onSuccess: { (response) in
+                SVProgressHUD.dismiss()
+                if let result = response.result.value as? NSDictionary{
+                    if let status = result["status"] as? Bool {
+                        if status == true {
+                            if let data = result["data"] as? NSDictionary {
+                                
+                                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                                let cameraVC = storyBoard.instantiateViewController(withIdentifier: "cameraVC") as! CameraViewController
+                                cameraVC.url = (data["door_img"] as? String)!
+                                self.navigationController?.pushViewController(cameraVC, animated:true)
+                            }
+                        } else {
+                            if let message = result["data"] as? String {
+                                self.showAlert(message: message)
+                                return
                             }
                         }
                     }
-                }, onFailure: { (error) in
-                    SVProgressHUD.dismiss()
-                    self.showAlert(message: error.localizedDescription)
-                })
-            } else if tappedImage == #imageLiteral(resourceName: "phone") {
-                DustanService.sharedInstance.doorBlock(token: Constants.token, code: self.door.code, password: textField.text!, on: true, onSuccess: { (response) in
-                    SVProgressHUD.dismiss()
-                    if let result = response.result.value as? NSDictionary{
-                        if let status = result["status"] as? Bool {
-                            if status == true {
-
-                            } else {
-                                if let message = result["data"] as? String {
-                                    self.showAlert(message: message)
-                                    return
-                                }
+                }
+            }, onFailure: { (error) in
+                SVProgressHUD.dismiss()
+                self.showAlert(message: error.localizedDescription)
+            })
+        } else if tappedImage == #imageLiteral(resourceName: "phone") {
+            DustanService.sharedInstance.doorBlock(token: Constants.token, code: self.door.code, password: "", on: true, onSuccess: { (response) in
+                SVProgressHUD.dismiss()
+                if let result = response.result.value as? NSDictionary{
+                    if let status = result["status"] as? Bool {
+                        if status == true {
+                            
+                        } else {
+                            if let message = result["data"] as? String {
+                                self.showAlert(message: message)
+                                return
                             }
                         }
                     }
-                }, onFailure: { (error) in
-                    SVProgressHUD.dismiss()
-                    self.showAlert(message: error.localizedDescription)
-                })
-            } else if tappedImage == #imageLiteral(resourceName: "bell") {
-                DustanService.sharedInstance.doorBell(token: Constants.token, code: self.door.code, password: textField.text!, on: true, onSuccess: { (response) in
-                    SVProgressHUD.dismiss()
-                    if let result = response.result.value as? NSDictionary{
-                        if let status = result["status"] as? Bool {
-                            if status == true {
-
-                            } else {
-                                if let message = result["data"] as? String {
-                                    self.showAlert(message: message)
-                                    return
-                                }
+                }
+            }, onFailure: { (error) in
+                SVProgressHUD.dismiss()
+                self.showAlert(message: error.localizedDescription)
+            })
+        } else if tappedImage == #imageLiteral(resourceName: "bell") {
+            DustanService.sharedInstance.doorBell(token: Constants.token, code: self.door.code, password: "", on: true, onSuccess: { (response) in
+                SVProgressHUD.dismiss()
+                if let result = response.result.value as? NSDictionary{
+                    if let status = result["status"] as? Bool {
+                        if status == true {
+                            
+                        } else {
+                            if let message = result["data"] as? String {
+                                self.showAlert(message: message)
+                                return
                             }
                         }
                     }
-                }, onFailure: { (error) in
-                    SVProgressHUD.dismiss()
-                    self.showAlert(message: error.localizedDescription)
-                })
-            } else if tappedImage == #imageLiteral(resourceName: "unlock"){
-                DustanService.sharedInstance.doorLock(token: Constants.token, code: self.door.code, password: textField.text!, on: false, onSuccess: { (response) in
-                    SVProgressHUD.dismiss()
-                    if let result = response.result.value as? NSDictionary{
-                        if let status = result["status"] as? Bool {
-                            if status == true {
-                                self.centerImg.image = UIImage(named: "lock")
-                                self.infoLabel.text = "> Slide to unlock"
-                            } else {
-                                if let message = result["data"] as? String {
-                                    self.showAlert(message: message)
-                                    return
-                                }
+                }
+            }, onFailure: { (error) in
+                SVProgressHUD.dismiss()
+                self.showAlert(message: error.localizedDescription)
+            })
+        } else if tappedImage == #imageLiteral(resourceName: "unlock"){
+            DustanService.sharedInstance.doorLock(token: Constants.token, code: self.door.code, password: "", on: false, onSuccess: { (response) in
+                SVProgressHUD.dismiss()
+                if let result = response.result.value as? NSDictionary{
+                    if let status = result["status"] as? Bool {
+                        if status == true {
+                            self.centerImg.image = UIImage(named: "lock")
+                            self.infoLabel.text = "> Slide to unlock"
+                        } else {
+                            if let message = result["data"] as? String {
+                                self.showAlert(message: message)
+                                return
                             }
                         }
                     }
-                }, onFailure: { (error) in
-                    SVProgressHUD.dismiss()
-                    self.showAlert(message: error.localizedDescription)
-                })
-            }
+                }
+            }, onFailure: { (error) in
+                SVProgressHUD.dismiss()
+                self.showAlert(message: error.localizedDescription)
+            })
         }
-        let CancelAct = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-        alertVC.addTextField { (textField) in
-            
-        }
-        alertVC.addAction(OKAct)
-        alertVC.addAction(CancelAct)
-        self.present(alertVC, animated: true, completion: nil)
     }
     
     func showAlert(message:String) {
@@ -250,6 +226,11 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
         topRightBtn.setImage(tmpImg, for: .normal)
         
         changeInfoText(img: centerImg.image!)
+    }
+    @IBAction func logoBtn_Click(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
     @IBAction func doorNameBtn_Click(_ sender: Any) {

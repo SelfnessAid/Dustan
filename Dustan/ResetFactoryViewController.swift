@@ -26,15 +26,21 @@ class ResetFactoryViewController: UIViewController {
     }
 
     @IBAction func logoBtn_Click(_ sender: Any) {
-        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     @IBAction func lockBtn_Click(_ sender: Any) {
     }
     @IBAction func doorNameBtn_Click(_ sender: Any) {
     }
     @IBAction func yesBtn_Click(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: "GSM")
+        UserDefaults.standard.set(false, forKey: "GSM")
+        UserDefaults.standard.set(false, forKey: "loggedIn")
         UserDefaults.standard.synchronize()
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "firstSetupVC") as! FirstSetupViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     @IBAction func noBtn_Click(_ sender: Any) {
         _ = self.navigationController?.popViewController(animated: true)

@@ -48,26 +48,29 @@ class UpdatePasswordViewController: UIViewController {
     }
     
     @IBAction func logoBtn_Click(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     @IBAction func lockBtn_Click(_ sender: Any) {
     }
     @IBAction func doorNameBtn_Click(_ sender: Any) {
     }
     
-    func showAlert(message:String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    func showAlert(title: String, message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func saveBtn_Click(_ sender: Any) {
         if newPasswordTextField.text != confirmTextField.text {
-            showAlert(message: "The passwords do not match")
+            showAlert(title: "Notice", message: "The passwords do not match")
             return
         }
         
         if UserDefaults.standard.bool(forKey: "GSM") == true {
-            showAlert(message: "GSM is blocked now. Please enable it on Administrator")
+            showAlert(title: "Notice", message: "GSM is blocked now. Please enable it on Administrator")
             return
         }
         
@@ -79,11 +82,11 @@ class UpdatePasswordViewController: UIViewController {
                 if let status = result["status"] as? Bool {
                     if status == true {
                         if (result["data"] as? String) != nil {
-                            self.showAlert(message: "Password is updated successfully")
+                            self.showAlert(title: "Success", message: "Password is updated successfully")
                         }
                     } else {
                         if let message = result["data"] as? String {
-                            self.showAlert(message: message)
+                            self.showAlert(title: "Error", message: message)
                             return
                         }
                     }
@@ -92,7 +95,7 @@ class UpdatePasswordViewController: UIViewController {
         }, onFailure: { (error) in
             debugPrint(error)
             SVProgressHUD.dismiss()
-            self.showAlert(message: error.localizedDescription)
+            self.showAlert(title: "Error", message: error.localizedDescription)
         })
         
     }

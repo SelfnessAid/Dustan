@@ -84,7 +84,9 @@ class AddNewDoorViewController: UIViewController {
     }
     
     @IBAction func logoBtn_Click(_ sender: Any) {
-        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
     @IBAction func doorNameBtn_Click(_ sender: Any) {

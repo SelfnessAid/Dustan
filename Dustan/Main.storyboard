@@ -550,9 +550,6 @@ Name</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="uBO-Go-MYg">
-                                <rect key="frame" x="158" y="20" width="59" height="69"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underline_title" translatesAutoresizingMaskIntoConstraints="NO" id="XMc-cy-gF5">
                                 <rect key="frame" x="0.0" y="89" width="375" height="16"/>
                             </imageView>
@@ -620,6 +617,13 @@ Name</string>
                                     <action selector="backBtn_Click:" destination="IXE-Ic-TkG" eventType="touchUpInside" id="psW-t8-ss2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cU4-sR-kWa">
+                                <rect key="frame" x="157.5" y="20" width="59" height="69"/>
+                                <state key="normal" backgroundImage="logo"/>
+                                <connections>
+                                    <action selector="logoBtn_Click:" destination="IXE-Ic-TkG" eventType="touchUpInside" id="iHF-hi-4gu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -628,21 +632,21 @@ Name</string>
                             <constraint firstItem="bGl-Md-Vas" firstAttribute="top" secondItem="Oke-N5-JAP" secondAttribute="bottom" constant="5" id="BB6-hy-0PD"/>
                             <constraint firstItem="H8z-H9-gKv" firstAttribute="leading" secondItem="QM5-Un-UJJ" secondAttribute="leadingMargin" constant="10" id="Bae-sn-Lij"/>
                             <constraint firstItem="Oke-N5-JAP" firstAttribute="width" secondItem="QM5-Un-UJJ" secondAttribute="height" multiplier="111:667" id="Bgs-oh-cZg"/>
+                            <constraint firstItem="cU4-sR-kWa" firstAttribute="top" secondItem="MQe-XE-vV7" secondAttribute="bottom" id="C1U-K8-mFy"/>
                             <constraint firstItem="Kv3-R5-1it" firstAttribute="top" secondItem="XMc-cy-gF5" secondAttribute="bottom" constant="10" id="J8S-hw-r8q"/>
                             <constraint firstItem="Oke-N5-JAP" firstAttribute="centerX" secondItem="QM5-Un-UJJ" secondAttribute="centerX" id="MeB-da-4p7"/>
+                            <constraint firstItem="cU4-sR-kWa" firstAttribute="centerX" secondItem="QM5-Un-UJJ" secondAttribute="centerX" id="Or4-24-4UA"/>
                             <constraint firstItem="2aG-Sc-mrA" firstAttribute="centerY" secondItem="Kv3-R5-1it" secondAttribute="centerY" id="QCa-E1-dmv"/>
                             <constraint firstItem="Kv3-R5-1it" firstAttribute="leading" secondItem="QM5-Un-UJJ" secondAttribute="leadingMargin" id="SFP-zA-I8U"/>
                             <constraint firstItem="b3v-IX-bJh" firstAttribute="leading" secondItem="QM5-Un-UJJ" secondAttribute="leading" id="Sik-0C-0om"/>
                             <constraint firstItem="bGl-Md-Vas" firstAttribute="centerX" secondItem="QM5-Un-UJJ" secondAttribute="centerX" id="WFk-3V-NUM"/>
-                            <constraint firstItem="uBO-Go-MYg" firstAttribute="top" secondItem="MQe-XE-vV7" secondAttribute="bottom" id="X3L-nM-eI8"/>
-                            <constraint firstItem="H8z-H9-gKv" firstAttribute="centerY" secondItem="uBO-Go-MYg" secondAttribute="centerY" id="XOE-Fp-FBx"/>
                             <constraint firstItem="b3v-IX-bJh" firstAttribute="top" secondItem="VBD-qo-4fx" secondAttribute="bottom" id="ZOa-IA-1BF"/>
                             <constraint firstItem="hyY-Po-Nlh" firstAttribute="top" secondItem="b3v-IX-bJh" secondAttribute="bottom" id="dCI-xi-JJQ"/>
                             <constraint firstItem="SVv-Ti-K6M" firstAttribute="centerY" secondItem="VBD-qo-4fx" secondAttribute="centerY" id="dZH-xZ-nx0"/>
-                            <constraint firstItem="uBO-Go-MYg" firstAttribute="centerX" secondItem="QM5-Un-UJJ" secondAttribute="centerX" id="f87-Vl-Rrp"/>
+                            <constraint firstItem="XMc-cy-gF5" firstAttribute="top" secondItem="cU4-sR-kWa" secondAttribute="bottom" id="eUj-vp-Xqc"/>
+                            <constraint firstItem="H8z-H9-gKv" firstAttribute="centerY" secondItem="cU4-sR-kWa" secondAttribute="centerY" id="evg-f4-vdM"/>
                             <constraint firstAttribute="trailing" secondItem="b3v-IX-bJh" secondAttribute="trailing" id="kA5-SY-iSP"/>
                             <constraint firstItem="XMc-cy-gF5" firstAttribute="leading" secondItem="QM5-Un-UJJ" secondAttribute="leading" id="luq-D7-fAZ"/>
-                            <constraint firstItem="XMc-cy-gF5" firstAttribute="top" secondItem="uBO-Go-MYg" secondAttribute="bottom" id="p7M-u5-36q"/>
                             <constraint firstAttribute="trailing" secondItem="XMc-cy-gF5" secondAttribute="trailing" id="t9f-Me-a9D"/>
                             <constraint firstItem="SVv-Ti-K6M" firstAttribute="trailing" secondItem="QM5-Un-UJJ" secondAttribute="trailingMargin" id="wuf-YZ-DGJ"/>
                             <constraint firstItem="Oke-N5-JAP" firstAttribute="centerY" secondItem="QM5-Un-UJJ" secondAttribute="centerY" id="yac-0e-MSl"/>
@@ -659,7 +663,7 @@ Name</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBx-xA-ibI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="-1531"/>
+            <point key="canvasLocation" x="1404" y="-1531.4842578710645"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="TVx-Hh-lxa">
@@ -679,6 +683,9 @@ Name</string>
                                     <constraint firstAttribute="height" constant="69" id="pah-zf-WMQ"/>
                                 </constraints>
                                 <state key="normal" image="logo"/>
+                                <connections>
+                                    <action selector="logoBtn_Click:" destination="scb-DH-1f4" eventType="touchUpInside" id="gqZ-jm-4Xh"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="underline_title" translatesAutoresizingMaskIntoConstraints="NO" id="Gci-SO-8dj">
                                 <rect key="frame" x="0.0" y="89" width="375" height="16"/>

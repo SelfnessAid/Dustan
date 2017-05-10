@@ -25,6 +25,9 @@ class AlertListViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func logoBtn_Click(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
     @IBAction func lockBtn_Click(_ sender: Any) {
     }
