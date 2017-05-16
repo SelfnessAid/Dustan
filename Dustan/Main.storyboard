@@ -581,8 +581,9 @@ Name</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SVv-Ti-K6M">
-                                <rect key="frame" x="263" y="570" width="96" height="48"/>
+                                <rect key="frame" x="259" y="569" width="100" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ijf-y1-WYi"/>
                                     <constraint firstAttribute="width" secondItem="SVv-Ti-K6M" secondAttribute="height" multiplier="2:1" id="lHZ-hl-rUx"/>
                                 </constraints>
                                 <state key="normal">
@@ -2198,12 +2199,10 @@ Name</string>
                         <outlet property="doorBtn" destination="ckN-tC-kIR" id="mhe-dB-U3a"/>
                         <outlet property="doorNameBtn" destination="YOr-Hl-3Dh" id="LSy-hO-01n"/>
                         <outlet property="externalBtn" destination="hGT-gc-A5V" id="325-8G-aOL"/>
-                        <outlet property="external_Click" destination="hGT-gc-A5V" id="bok-XM-rKb"/>
                         <outlet property="gsmBtn" destination="Puz-Go-07v" id="lmf-9k-F1s"/>
                         <outlet property="internalBtn" destination="ZnN-bf-w52" id="i7R-z0-jIo"/>
                         <outlet property="lowBtn" destination="oln-bL-fhE" id="Avr-pT-AuO"/>
                         <outlet property="mainsBtn" destination="UVL-Zf-Tct" id="LRn-4L-w8v"/>
-                        <outlet property="mains_Click" destination="UVL-Zf-Tct" id="tvl-W0-sr6"/>
                         <outlet property="remoteBtn" destination="nE3-WL-w6B" id="VNn-gJ-NIu"/>
                         <outlet property="tamperBtn" destination="8Mh-as-oOk" id="p7o-HS-F5Z"/>
                     </connections>
