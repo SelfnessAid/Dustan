@@ -31,7 +31,7 @@ class DeleteUserViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "deleteUserCell")! as UITableViewCell
-        cell.textLabel?.text = "\(indexPath.row + 1)  " + Constants.users[indexPath.row].first_name + Constants.users[indexPath.row].last_name
+        cell.textLabel?.text = "\(indexPath.row + 1)  " + Constants.users[indexPath.row].phone_number
         cell.accessoryType = cell.isSelected ? .checkmark: .none
         cell.selectionStyle = .none
         return cell

@@ -234,7 +234,7 @@
 				TargetAttributes = {
 					4B58D38C1E8374A6000D155B = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = YLXVCP6CQB;
+						DevelopmentTeam = ESTSL5TG4Y;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -456,14 +456,16 @@
 			baseConfigurationReference = 5646B9779675784F3D0771BF /* Pods-Dustan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: HeMin Wang (SKV63Z99FA)";
-				DEVELOPMENT_TEAM = YLXVCP6CQB;
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Dunstan (VYMURMDC58)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Dunstan (VYMURMDC58)";
+				DEVELOPMENT_TEAM = ESTSL5TG4Y;
 				INFOPLIST_FILE = Dustan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobidev.Dustan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobidev.dunstan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9e82df04-8461-4c2e-851b-d406a3303e2c";
-				PROVISIONING_PROFILE_SPECIFIER = All_Pro_0603;
+				PROVISIONING_PROFILE = "395a3cab-af05-4226-bf19-c43ea44aa7b1";
+				PROVISIONING_PROFILE_SPECIFIER = development_provision;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -473,14 +475,16 @@
 			baseConfigurationReference = 71885D02C97E0DDE21E49874 /* Pods-Dustan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: HeMin Wang (SKV63Z99FA)";
-				DEVELOPMENT_TEAM = YLXVCP6CQB;
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Dunstan (VYMURMDC58)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Dunstan (VYMURMDC58)";
+				DEVELOPMENT_TEAM = ESTSL5TG4Y;
 				INFOPLIST_FILE = Dustan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobidev.Dustan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobidev.dunstan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9e82df04-8461-4c2e-851b-d406a3303e2c";
-				PROVISIONING_PROFILE_SPECIFIER = All_Pro_0603;
+				PROVISIONING_PROFILE = "395a3cab-af05-4226-bf19-c43ea44aa7b1";
+				PROVISIONING_PROFILE_SPECIFIER = development_provision;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

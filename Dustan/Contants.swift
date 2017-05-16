@@ -45,6 +45,7 @@ struct Door {
     var code = ""
     var state = ""
     var name = ""
+    var password = ""
 }
 
 struct User {

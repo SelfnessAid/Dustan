@@ -37,6 +37,7 @@ class DoorListViewController: UIViewController, UITableViewDelegate, UITableView
             door.code = item["code"] as! String
             door.state = item["status"] as! String
             door.name = item["name"] as! String
+            door.password = item["password"] as! String
             Constants.doors.append(door)
         }
         

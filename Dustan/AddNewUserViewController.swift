@@ -59,20 +59,20 @@ class AddNewUserViewController: UIViewController {
         return emailTest.evaluate(with: testStr)
     }
     
-    func showAlert(message:String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    func showAlert(title: String, message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func addBtn_Click(_ sender: Any) {
         if isValidEmail(testStr: emailTextField.text!) == false {
-            showAlert(message: "Please enter correct email")
+            showAlert(title: "Notice", message: "Please enter correct email")
             return
         }
         
         if UserDefaults.standard.bool(forKey: "GSM") == true {
-            showAlert(message: "GSM is blocked now. Please enable it on Administrator")
+            showAlert(title: "Notice", message: "GSM is blocked now. Please enable it on Administrator")
             return
         }
         
@@ -85,10 +85,10 @@ class AddNewUserViewController: UIViewController {
                 if let result = response.result.value as? NSDictionary{
                     if let status = result["status"] as? Bool {
                         if status == true {
-                            self.showAlert(message: "Added new User successfully")
+                            self.showAlert(title:"Success", message: "Added new User successfully")
                         } else {
                             if let message = result["data"] as? String {
-                                self.showAlert(message: message)
+                                self.showAlert(title: "Error", message: message)
                                 return
                             }
                         }
@@ -96,7 +96,7 @@ class AddNewUserViewController: UIViewController {
                 }
             }, onFailure: { (error) in
                 SVProgressHUD.dismiss()
-                self.showAlert(message: error.localizedDescription)
+                self.showAlert(title: "Error", message: error.localizedDescription)
             })
         }
         let CancelAct = UIAlertAction(title: "Cancel", style: .default, handler: nil)
