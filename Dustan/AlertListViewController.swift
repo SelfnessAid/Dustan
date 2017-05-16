@@ -33,57 +33,57 @@ class AlertListViewController: UIViewController {
     
     func initUI() {
         if UserDefaults.standard.bool(forKey: "internal") == false {
-            internalBtn.titleLabel?.text = "Off"
+            internalBtn.setTitle("Off", for: .normal)
         } else {
-            internalBtn.titleLabel?.text = "On"
+            internalBtn.setTitle("On", for: .normal)
         }
         
         if UserDefaults.standard.bool(forKey: "external") == false {
-            externalBtn.titleLabel?.text = "Off"
+            externalBtn.setTitle("Off", for: .normal)
         } else {
-            externalBtn.titleLabel?.text = "On"
+            externalBtn.setTitle("On", for: .normal)
         }
         
         if UserDefaults.standard.bool(forKey: "remote") == false {
-            remoteBtn.titleLabel?.text = "Off"
+            remoteBtn.setTitle("Off", for: .normal)
         } else {
-            remoteBtn.titleLabel?.text = "On"
+            remoteBtn.setTitle("On", for: .normal)
         }
         
         if UserDefaults.standard.bool(forKey: "tamper") == false {
-            tamperBtn.titleLabel?.text = "Off"
+            tamperBtn.setTitle("Off", for: .normal)
         } else {
-            tamperBtn.titleLabel?.text = "On"
+            tamperBtn.setTitle("On", for: .normal)
         }
         
         if UserDefaults.standard.bool(forKey: "gsm_attempt") == false {
-            gsmBtn.titleLabel?.text = "Off"
+            gsmBtn.setTitle("Off", for: .normal)
         } else {
-            gsmBtn.titleLabel?.text = "On"
+            gsmBtn.setTitle("On", for: .normal)
         }
         
         if UserDefaults.standard.bool(forKey: "mains") == false {
-            mainsBtn.titleLabel?.text = "Off"
+            mainsBtn.setTitle("Off", for: .normal)
         } else {
-            mainsBtn.titleLabel?.text = "On"
+            mainsBtn.setTitle("On", for: .normal)
         }
         
         if UserDefaults.standard.bool(forKey: "low") == false {
-            lowBtn.titleLabel?.text = "Off"
+            lowBtn.setTitle("Off", for: .normal)
         } else {
-            lowBtn.titleLabel?.text = "On"
+            lowBtn.setTitle("On", for: .normal)
         }
         
         if UserDefaults.standard.bool(forKey: "door_error") == false {
-            doorBtn.titleLabel?.text = "Off"
+            doorBtn.setTitle("Off", for: .normal)
         } else {
-            doorBtn.titleLabel?.text = "On"
+            doorBtn.setTitle("On", for: .normal)
         }
         
         if UserDefaults.standard.bool(forKey: "bell") == false {
-            bellBtn.titleLabel?.text = "Off"
+            bellBtn.setTitle("Off", for: .normal)
         } else {
-            bellBtn.titleLabel?.text = "On"
+            bellBtn.setTitle("On", for: .normal)
         }
     }
 
@@ -109,11 +109,11 @@ class AlertListViewController: UIViewController {
     
     @IBAction func internal_Click(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "internal") == false {
-            internalBtn.titleLabel?.text = "On"
+            internalBtn.setTitle("On", for: .normal)
             UserDefaults.standard.set(true, forKey: "internal")
             UserDefaults.standard.synchronize()
         } else {
-            internalBtn.titleLabel?.text = "Off"
+            internalBtn.setTitle("Off", for: .normal)
             UserDefaults.standard.set(false, forKey: "internal")
             UserDefaults.standard.synchronize()
         }
@@ -121,11 +121,11 @@ class AlertListViewController: UIViewController {
     
     @IBAction func external_Click(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "external") == false {
-            externalBtn.titleLabel?.text = "On"
+            externalBtn.setTitle("On", for: .normal)
             UserDefaults.standard.set(true, forKey: "external")
             UserDefaults.standard.synchronize()
         } else {
-            externalBtn.titleLabel?.text = "Off"
+            externalBtn.setTitle("Off", for: .normal)
             UserDefaults.standard.set(false, forKey: "external")
             UserDefaults.standard.synchronize()
         }
@@ -133,11 +133,11 @@ class AlertListViewController: UIViewController {
     
     @IBAction func remote_Click(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "remote") == false {
-            remoteBtn.titleLabel?.text = "On"
+            remoteBtn.setTitle("On", for: .normal)
             UserDefaults.standard.set(true, forKey: "remote")
             UserDefaults.standard.synchronize()
         } else {
-            remoteBtn.titleLabel?.text = "Off"
+            remoteBtn.setTitle("Off", for: .normal)
             UserDefaults.standard.set(false, forKey: "remote")
             UserDefaults.standard.synchronize()
         }
@@ -145,11 +145,11 @@ class AlertListViewController: UIViewController {
 
     @IBAction func tamper_Click(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "tamper") == false {
-            tamperBtn.titleLabel?.text = "On"
+            tamperBtn.setTitle("On", for: .normal)
             UserDefaults.standard.set(true, forKey: "tamper")
             UserDefaults.standard.synchronize()
         } else {
-            tamperBtn.titleLabel?.text = "Off"
+            tamperBtn.setTitle("Off", for: .normal)
             UserDefaults.standard.set(false, forKey: "tamper")
             UserDefaults.standard.synchronize()
         }
@@ -157,11 +157,11 @@ class AlertListViewController: UIViewController {
     
     @IBAction func gsm_Click(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "gsm_attempt") == false {
-            gsmBtn.titleLabel?.text = "On"
+            gsmBtn.setTitle("On", for: .normal)
             UserDefaults.standard.set(true, forKey: "gsm_attempt")
             UserDefaults.standard.synchronize()
         } else {
-            gsmBtn.titleLabel?.text = "Off"
+            gsmBtn.setTitle("Off", for: .normal)
             UserDefaults.standard.set(false, forKey: "gsm_attempt")
             UserDefaults.standard.synchronize()
         }
@@ -169,11 +169,11 @@ class AlertListViewController: UIViewController {
     
     @IBAction func mains_Click(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "mains") == false {
-            mainsBtn.titleLabel?.text = "On"
+            mainsBtn.setTitle("On", for: .normal)
             UserDefaults.standard.set(true, forKey: "mains")
             UserDefaults.standard.synchronize()
         } else {
-            mainsBtn.titleLabel?.text = "Off"
+            mainsBtn.setTitle("Off", for: .normal)
             UserDefaults.standard.set(false, forKey: "mains")
             UserDefaults.standard.synchronize()
         }
@@ -181,11 +181,11 @@ class AlertListViewController: UIViewController {
     
     @IBAction func low_Click(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "low") == false {
-            lowBtn.titleLabel?.text = "On"
+            lowBtn.setTitle("On", for: .normal)
             UserDefaults.standard.set(true, forKey: "low")
             UserDefaults.standard.synchronize()
         } else {
-            lowBtn.titleLabel?.text = "Off"
+            lowBtn.setTitle("Off", for: .normal)
             UserDefaults.standard.set(false, forKey: "low")
             UserDefaults.standard.synchronize()
         }
@@ -193,11 +193,11 @@ class AlertListViewController: UIViewController {
     
     @IBAction func door_Click(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "door_error") == false {
-            doorBtn.titleLabel?.text = "On"
+            doorBtn.setTitle("On", for: .normal)
             UserDefaults.standard.set(true, forKey: "door_error")
             UserDefaults.standard.synchronize()
         } else {
-            doorBtn.titleLabel?.text = "Off"
+            doorBtn.setTitle("Off", for: .normal)
             UserDefaults.standard.set(false, forKey: "door_error")
             UserDefaults.standard.synchronize()
         }
@@ -205,11 +205,11 @@ class AlertListViewController: UIViewController {
     
     @IBAction func bell_Click(_ sender: Any) {
         if UserDefaults.standard.bool(forKey: "bell") == false {
-            bellBtn.titleLabel?.text = "On"
+            bellBtn.setTitle("On", for: .normal)
             UserDefaults.standard.set(true, forKey: "bell")
             UserDefaults.standard.synchronize()
         } else {
-            bellBtn.titleLabel?.text = "Off"
+            bellBtn.setTitle("Off", for: .normal)
             UserDefaults.standard.set(false, forKey: "bell")
             UserDefaults.standard.synchronize()
         }

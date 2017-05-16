@@ -28,7 +28,7 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
     }
     
     func initialize() {
-        doorNameBtn.titleLabel?.text = door.name
+        doorNameBtn.setTitle(door.name, for: .normal)
         doorNameBtn.layer.cornerRadius = 5
         doorNameBtn.layer.borderWidth = 2
         doorNameBtn.layer.borderColor = UIColor.black.cgColor
