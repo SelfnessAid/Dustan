@@ -97,6 +97,12 @@ class AlertListViewController: UIViewController {
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let str = UserDefaults.standard.string(forKey: "door_name") {
+            doorNameBtn.setTitle(str, for: .normal)
+        }
+    }
+    
     @IBAction func lockBtn_Click(_ sender: Any) {
     }
     

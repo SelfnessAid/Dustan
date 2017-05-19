@@ -28,6 +28,12 @@ class DoorListViewController: UIViewController, UITableViewDelegate, UITableView
         getDoors()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let str = UserDefaults.standard.string(forKey: "door_name") {
+            doorNameBtn.setTitle(str, for: .normal)
+        }
+    }
+    
     func processData(data: [NSDictionary]) {
         Constants.doors.removeAll()
         for item in data {

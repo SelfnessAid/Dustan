@@ -464,8 +464,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobidev.dunstan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "395a3cab-af05-4226-bf19-c43ea44aa7b1";
-				PROVISIONING_PROFILE_SPECIFIER = development_provision;
+				PROVISIONING_PROFILE = "de594b45-f9c8-4995-8c82-41b031c84cae";
+				PROVISIONING_PROFILE_SPECIFIER = dunstan_development_provision;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -483,8 +483,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobidev.dunstan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "395a3cab-af05-4226-bf19-c43ea44aa7b1";
-				PROVISIONING_PROFILE_SPECIFIER = development_provision;
+				PROVISIONING_PROFILE = "de594b45-f9c8-4995-8c82-41b031c84cae";
+				PROVISIONING_PROFILE_SPECIFIER = dunstan_development_provision;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -774,8 +774,9 @@ Name</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bcW-nN-vmC">
-                                <rect key="frame" x="263" y="570" width="96" height="48"/>
+                                <rect key="frame" x="259" y="569" width="100" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Nry-OR-iim"/>
                                     <constraint firstAttribute="width" secondItem="bcW-nN-vmC" secondAttribute="height" multiplier="2:1" id="Ypr-n7-VMc"/>
                                 </constraints>
                                 <state key="normal">
@@ -1821,8 +1822,9 @@ Name</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YOr-Hl-3Dh">
-                                <rect key="frame" x="263" y="570" width="96" height="48"/>
+                                <rect key="frame" x="259" y="569" width="100" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6us-L3-Wjt"/>
                                     <constraint firstAttribute="width" secondItem="YOr-Hl-3Dh" secondAttribute="height" multiplier="2:1" id="DTU-c8-nNZ"/>
                                 </constraints>
                                 <state key="normal">
@@ -2368,8 +2370,9 @@ Name</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oCX-zQ-C5I">
-                                <rect key="frame" x="263" y="570" width="96" height="48"/>
+                                <rect key="frame" x="259" y="569" width="100" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="O6q-ed-mLD"/>
                                     <constraint firstAttribute="width" secondItem="oCX-zQ-C5I" secondAttribute="height" multiplier="2:1" id="XfT-97-ueR"/>
                                 </constraints>
                                 <state key="normal">
@@ -3420,8 +3423,9 @@ Name</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uRM-NF-URt">
-                                <rect key="frame" x="263" y="570.5" width="96" height="48"/>
+                                <rect key="frame" x="259" y="569.5" width="100" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OyP-9d-grB"/>
                                     <constraint firstAttribute="width" secondItem="uRM-NF-URt" secondAttribute="height" multiplier="2:1" id="uWk-WN-olr"/>
                                 </constraints>
                                 <state key="normal">
@@ -3440,7 +3444,7 @@ Name</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hI4-yc-zEu">
-                                <rect key="frame" x="0.0" y="203" width="375" height="357.5"/>
+                                <rect key="frame" x="0.0" y="203" width="375" height="356.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="doorCell" id="JZz-mE-DDc" customClass="DoorTableViewCell" customModule="Dustan" customModuleProvider="target">
