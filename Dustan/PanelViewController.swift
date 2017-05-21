@@ -30,6 +30,7 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
     func initialize() {
         doorNameBtn.setTitle(door.name, for: .normal)
         UserDefaults.standard.setValue(door.name, forKey: "door_name")
+        UserDefaults.standard.setValue(door.code, forKey: "door_code")
         UserDefaults.standard.synchronize()
         
         doorNameBtn.layer.cornerRadius = 5
@@ -184,7 +185,7 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
     }
     
     func showAlert(message:String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Notice", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

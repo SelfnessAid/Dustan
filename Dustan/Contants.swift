@@ -30,6 +30,7 @@ struct Constants {
     }
     static var questions = [Question]()
     static var doors = [Door]()
+    static var adminDoors = [Door]()
     static var users = [User]()
     static var token: String = ""
 }

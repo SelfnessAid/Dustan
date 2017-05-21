@@ -11,7 +11,6 @@ import SVProgressHUD
 
 class SignInViewController: UIViewController {
 
-    @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var doorNameBtn: UIButton!
     override func viewDidLoad() {
@@ -21,7 +20,6 @@ class SignInViewController: UIViewController {
         doorNameBtn.layer.borderWidth = 2
         doorNameBtn.layer.borderColor = UIColor.black.cgColor
         doorNameBtn.titleLabel?.textAlignment = NSTextAlignment.center
-        phoneTextField.underlined()
         passwordTextField.underlined()
     }
 
@@ -31,34 +29,39 @@ class SignInViewController: UIViewController {
     }
     @IBAction func loginBtn_Click(_ sender: Any) {
         SVProgressHUD.show()
-        DustanService.sharedInstance.signInUser(phone:self.phoneTextField.text!, password: self.passwordTextField.text!, onSuccess: { (response) in
-            debugPrint(response)
-            SVProgressHUD.dismiss()
-            if let result = response.result.value as? NSDictionary{
-                if let status = result["status"] as? Bool {
-                    if status == true {
-                        if let token = result["data"] as? NSDictionary {
-                            if let tokenStr = token["token"] as? String {
-                                Constants.token = tokenStr
-                                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                let homeVC = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
-                                self.navigationController?.pushViewController(homeVC, animated: true)
+        if let phone_number = UserDefaults.standard.string(forKey: "phone_number") {
+            DustanService.sharedInstance.signInUser(phone: phone_number, password: self.passwordTextField.text!, onSuccess: { (response) in
+                debugPrint(response)
+                SVProgressHUD.dismiss()
+                if let result = response.result.value as? NSDictionary{
+                    if let status = result["status"] as? Bool {
+                        if status == true {
+                            if let token = result["data"] as? NSDictionary {
+                                if let tokenStr = token["token"] as? String {
+                                    Constants.token = tokenStr
+                                    self.performSegue(withIdentifier: "menuSegue", sender: self)
+//                                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                                    let homeVC = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+//                                    self.navigationController?.pushViewController(homeVC, animated: true)
+                                }
+                                
                             }
-                            
-                        }
-                    } else {
-                        if let message = result["data"] as? String {
-                            self.showAlert(message: message)
-                            return
+                        } else {
+                            if let message = result["data"] as? String {
+                                self.showAlert(message: message)
+                                return
+                            }
                         }
                     }
                 }
-            }
-        }, onFailure: { (error) in
-            debugPrint(error)
+            }, onFailure: { (error) in
+                debugPrint(error)
+                SVProgressHUD.dismiss()
+                self.showAlert(message: error.localizedDescription)
+            })
+        }else {
             SVProgressHUD.dismiss()
-            self.showAlert(message: error.localizedDescription)
-        })
+        }
     }
     
     func showAlert(message:String) {

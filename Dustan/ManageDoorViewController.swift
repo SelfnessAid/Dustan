@@ -36,7 +36,7 @@ class ManageDoorViewController: UIViewController, UITableViewDataSource, UITable
             door.code = item["code"] as! String
             door.state = item["status"] as! String
             door.name = item["name"] as! String
-            Constants.doors.append(door)
+            Constants.adminDoors.append(door)
         }
         
         doorTableView.reloadData()
@@ -73,19 +73,19 @@ class ManageDoorViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Constants.doors.count
+        return Constants.adminDoors.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "doorCell")! as UITableViewCell
-        cell.textLabel?.text = "\(indexPath.row + 1)  " + Constants.doors[indexPath.row].name
+        cell.textLabel?.text = "\(indexPath.row + 1)  " + Constants.adminDoors[indexPath.row].name
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let doorStatusVC = storyBoard.instantiateViewController(withIdentifier: "doorStatusVC") as! DoorStatusViewController
-        doorStatusVC.door = Constants.doors[indexPath.row]
+        doorStatusVC.door = Constants.adminDoors[indexPath.row]
         self.navigationController?.pushViewController(doorStatusVC, animated: true)
     }
 
@@ -95,8 +95,27 @@ class ManageDoorViewController: UIViewController, UITableViewDataSource, UITable
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
     
+    func getDoor(door_code: String) -> Door {
+        for door: Door in Constants.doors {
+            if door.code == door_code {
+                return door
+            }
+        }
+        return Door()
+    }
+    
     @IBAction func lockBtn_Click(_ sender: Any) {
-        
+        if let doorCode = UserDefaults.standard.string(forKey: "door_code") {
+            let door = getDoor(door_code: doorCode)
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let panelVC = storyBoard.instantiateViewController(withIdentifier: "panelVC") as! PanelViewController
+            panelVC.door = door
+            self.navigationController?.pushViewController(panelVC, animated:true)
+        } else {
+            let alert = UIAlertController(title: "Notice", message: "You have no selected door now.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func doorNameBtn_Click(_ sender: Any) {

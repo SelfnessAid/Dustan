@@ -100,7 +100,28 @@ class DoorListViewController: UIViewController, UITableViewDelegate, UITableView
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
+    
+    func getDoor(door_code: String) -> Door {
+        for door: Door in Constants.doors {
+            if door.code == door_code {
+                return door
+            }
+        }
+        return Door()
+    }
+    
     @IBAction func lockBtn_Click(_ sender: Any) {
+        if let doorCode = UserDefaults.standard.string(forKey: "door_code") {
+            let door = getDoor(door_code: doorCode)
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let panelVC = storyBoard.instantiateViewController(withIdentifier: "panelVC") as! PanelViewController
+            panelVC.door = door
+            self.navigationController?.pushViewController(panelVC, animated:true)
+        } else {
+            let alert = UIAlertController(title: "Notice", message: "You have no selected door now.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     @IBAction func doorNameBtn_Click(_ sender: Any) {
     }
