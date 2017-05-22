@@ -28,7 +28,7 @@ class ManageDoorViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func processData(data: [NSDictionary]) {
-        Constants.doors.removeAll()
+        Constants.adminDoors.removeAll()
         for item in data {
             var door: Door = Door()
             door.id = String(item["id"] as! Int)
