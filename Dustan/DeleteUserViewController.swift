@@ -25,6 +25,12 @@ class DeleteUserViewController: UIViewController, UITableViewDelegate, UITableVi
         userTableView.allowsMultipleSelection = false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let str = UserDefaults.standard.string(forKey: "door_name") {
+            doorNameBtn.setTitle(str, for: .normal)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Constants.users.count
     }

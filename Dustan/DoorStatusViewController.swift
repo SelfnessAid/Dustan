@@ -30,6 +30,12 @@ class DoorStatusViewController: UIViewController {
         doorStateLabel.isHidden = true
         doorCommentLabel.isHidden = true
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let str = UserDefaults.standard.string(forKey: "door_name") {
+            doorNameBtn.setTitle(str, for: .normal)
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

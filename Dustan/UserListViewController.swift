@@ -28,6 +28,9 @@ class UserListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewWillAppear(_ animated: Bool) {
         getUsers()
+        if let str = UserDefaults.standard.string(forKey: "door_name") {
+            doorNameBtn.setTitle(str, for: .normal)
+        }
     }
     
     func processData(data: [NSDictionary]) {

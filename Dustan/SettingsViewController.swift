@@ -24,6 +24,12 @@ class SettingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let str = UserDefaults.standard.string(forKey: "door_name") {
+            doorNameBtn.setTitle(str, for: .normal)
+        }
+    }
 
     @IBAction func doorNameBtn_Click(_ sender: Any) {
     }

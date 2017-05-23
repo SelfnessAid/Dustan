@@ -26,9 +26,13 @@ class SecurityQuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         getQuestions()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let str = UserDefaults.standard.string(forKey: "door_name") {
+            doorNameBtn.setTitle(str, for: .normal)
+        }
     }
     
     override func viewDidLayoutSubviews() {

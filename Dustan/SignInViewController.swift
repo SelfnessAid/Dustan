@@ -27,6 +27,13 @@ class SignInViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let str = UserDefaults.standard.string(forKey: "door_name") {
+            doorNameBtn.setTitle(str, for: .normal)
+        }
+    }
+    
     @IBAction func loginBtn_Click(_ sender: Any) {
         SVProgressHUD.show()
         if let phone_number = UserDefaults.standard.string(forKey: "phone_number") {
@@ -40,9 +47,6 @@ class SignInViewController: UIViewController {
                                 if let tokenStr = token["token"] as? String {
                                     Constants.token = tokenStr
                                     self.performSegue(withIdentifier: "menuSegue", sender: self)
-//                                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                                    let homeVC = storyBoard.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
-//                                    self.navigationController?.pushViewController(homeVC, animated: true)
                                 }
                                 
                             }

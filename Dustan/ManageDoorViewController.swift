@@ -27,6 +27,12 @@ class ManageDoorViewController: UIViewController, UITableViewDataSource, UITable
         getDoors()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let str = UserDefaults.standard.string(forKey: "door_name") {
+            doorNameBtn.setTitle(str, for: .normal)
+        }
+    }
+    
     func processData(data: [NSDictionary]) {
         Constants.adminDoors.removeAll()
         for item in data {
