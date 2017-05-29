@@ -24,6 +24,10 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         initialize()
     }
     
@@ -66,8 +70,10 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
         }
         
 //        SVProgressHUD.show()
+        let origin = UIImagePNGRepresentation(centerImg.image!)
+        let lockData = UIImagePNGRepresentation(UIImage(named: "lock")!)
         
-        if centerImg.image == #imageLiteral(resourceName: "lock") {
+        if origin == lockData {
             DustanService.sharedInstance.doorLock(token: Constants.token, code: self.door.code, password: self.door.password, on: false, onSuccess: { (response) in
 //                SVProgressHUD.dismiss()
                 if let result = response.result.value as? NSDictionary{
@@ -97,8 +103,16 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
         }
         
         let tappedImage = self.centerImg.image
+        
+        let origin = UIImagePNGRepresentation(tappedImage!)
+        let cameraData = UIImagePNGRepresentation(UIImage(named: "camera")!)
+        let callData = UIImagePNGRepresentation(UIImage(named: "phone")!)
+        let bellData = UIImagePNGRepresentation(UIImage(named: "bell")!)
+        let unlockData = UIImagePNGRepresentation(UIImage(named: "unlock")!)
+//        let lockData = UIImagePNGRepresentation(UIImage(named: "lock")!)
+        
         SVProgressHUD.show()
-        if tappedImage == #imageLiteral(resourceName: "camera") {
+        if origin == cameraData {
             DustanService.sharedInstance.doorCamera(token: Constants.token, code: self.door.code, password: self.door.password, on: true, onSuccess: { (response) in
                 SVProgressHUD.dismiss()
                 if let result = response.result.value as? NSDictionary{
@@ -123,7 +137,7 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
                 SVProgressHUD.dismiss()
                 self.showAlert(message: error.localizedDescription)
             })
-        } else if tappedImage == #imageLiteral(resourceName: "phone") {
+        } else if origin == callData {
             DustanService.sharedInstance.doorBlock(token: Constants.token, code: self.door.code, password: self.door.password, on: true, onSuccess: { (response) in
                 SVProgressHUD.dismiss()
                 if let result = response.result.value as? NSDictionary{
@@ -142,7 +156,7 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
                 SVProgressHUD.dismiss()
                 self.showAlert(message: error.localizedDescription)
             })
-        } else if tappedImage == #imageLiteral(resourceName: "bell") {
+        } else if origin == bellData {
             DustanService.sharedInstance.doorBell(token: Constants.token, code: self.door.code, password: self.door.password, on: true, onSuccess: { (response) in
                 SVProgressHUD.dismiss()
                 if let result = response.result.value as? NSDictionary{
@@ -161,9 +175,12 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
                 SVProgressHUD.dismiss()
                 self.showAlert(message: error.localizedDescription)
             })
-        } else if tappedImage == #imageLiteral(resourceName: "unlock"){
+        } else if origin == unlockData {
             DustanService.sharedInstance.doorLock(token: Constants.token, code: self.door.code, password: self.door.password, on: false, onSuccess: { (response) in
-                SVProgressHUD.dismiss()
+                DispatchQueue.main.async {
+                    SVProgressHUD.dismiss()
+                }
+                
                 if let result = response.result.value as? NSDictionary{
                     if let status = result["status"] as? Bool {
                         if status == true {
@@ -196,15 +213,22 @@ class PanelViewController: UIViewController, UIGestureRecognizerDelegate{
     }
     
     func changeInfoText(img: UIImage) {
-        if img == #imageLiteral(resourceName: "camera") {
+        let origin = UIImagePNGRepresentation(img)
+        let cameraData = UIImagePNGRepresentation(UIImage(named: "camera")!)
+        let callData = UIImagePNGRepresentation(UIImage(named: "phone")!)
+        let bellData = UIImagePNGRepresentation(UIImage(named: "bell")!)
+        let unlockData = UIImagePNGRepresentation(UIImage(named: "unlock")!)
+        let lockData = UIImagePNGRepresentation(UIImage(named: "lock")!)
+        
+        if origin == cameraData {
             infoLabel.text = "Press to take picture"
-        } else if img == #imageLiteral(resourceName: "phone") {
+        } else if origin == callData {
             infoLabel.text = "Press to call door"
-        } else if img == #imageLiteral(resourceName: "bell") {
+        } else if origin == bellData {
             infoLabel.text = "Press to ring door bell"
-        } else if img == #imageLiteral(resourceName: "lock") {
+        } else if origin == lockData {
             infoLabel.text = "> Slide to unlock"
-        } else if img == #imageLiteral(resourceName: "unlock") {
+        } else if origin == unlockData {
             infoLabel.text = "Press to lock"
         }
     }
